@@ -1,10 +1,8 @@
 ---
-title: "1.two Sum"
-date: 2022-10-31T22:01:45+08:00
-draft: true
+title: "Two Sum"
+date: 2022-10-31T23:44:48+08:00
+draft: false
 ---
-
-
 
 Solution:
     HashMap, Two Pointer
