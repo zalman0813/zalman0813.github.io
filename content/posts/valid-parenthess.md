@@ -1,5 +1,5 @@
 ---
-title: "Valid Parenthess"
+title: "20. Valid Parenthess"
 date: 2022-11-01T21:38:19+08:00
 draft: False
 ---
