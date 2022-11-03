@@ -2,3 +2,8 @@ baseURL = 'https://zalman0813.github.io'
 languageCode = 'en-us'
 title = 'Pin Code Blog'
 theme = "beautifulhugo"
+
+[taxonomies]
+  tag = "tags"
+  series = "series"
+  category = "categories"
