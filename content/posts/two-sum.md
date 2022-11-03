@@ -2,6 +2,9 @@
 title: "1.two Sum"
 date: 2022-10-31T22:01:45+08:00
 draft: false
+tags: ["two pointer", "169", "easy", "hashmap"]
+series: ["leetcode"]
+categories: ["coding"]
 ---
 
 Solution:

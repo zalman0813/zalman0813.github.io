@@ -2,11 +2,12 @@
 title: "Merge Two Sorted Lists"
 date: 2022-11-02T22:05:02+08:00
 draft: false
+tags: ["two pointer", "169", "easy", "liniked list"]
+series: ["leetcode"]
+categories: ["coding"]
 ---
 
 Link: https://leetcode.com/problems/merge-two-sorted-lists/
-
-Tags: two pointer, 169, liniked list
 
 Status: done
 

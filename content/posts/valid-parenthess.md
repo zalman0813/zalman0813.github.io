@@ -2,6 +2,9 @@
 title: "20. Valid Parenthess"
 date: 2022-11-01T21:38:19+08:00
 draft: False
+tags: ["stack", "169", "easy", "hashmap"]
+series: ["leetcode"]
+categories: ["coding"]
 ---
 
 Link: https://leetcode.com/problems/valid-parentheses/
