@@ -7,7 +7,7 @@ tags: ["two point", "169", "easy"]
 series: ["leetcode"]
 categories: ["coding"]
 ---
-Link: https://leetcode.com/problems/valid-palindrome/
+
 
 Solution: Two Pointer
 
@@ -26,10 +26,7 @@ class Solution:
             if s[l].lower() != s[r].lower():
                 return False
             l, r = l+1, r-1
-        return True
-            
-        
-        
+        return True        
         
     def alphaNum(self, c):
         return (ord('A') <= ord(c) <= ord('Z') or
@@ -37,9 +34,10 @@ class Solution:
                 ord('0') <= ord(c) <= ord('9')
                )
     
-
 ```
 
 Time Complexity: O(n)
 
 Space Complexity: O(1)
+
+Link: https://leetcode.com/problems/valid-palindrome/
