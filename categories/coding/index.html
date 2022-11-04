@@ -4,8 +4,7 @@
 <span class=icon-bar></span>
 <span class=icon-bar></span></button>
 <a class=navbar-brand href=https://zalman0813.github.io>Pin Code Blog</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"></ul></div></div></nav><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=categories-heading><h1>coding</h1><hr class=small></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-md-10 col-md-offset-1"><div class=posts-list><article class=post-preview><a href=https://zalman0813.github.io/posts/valid-palindrome/><h2 class=post-title>Valid Palindrome</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on November 4, 2022
-&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/valid-palindrome/
-Solution: Two Pointer
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Solution: Two Pointer
 Code:
 class Solution: def isPalindrome(self, s: str) -> bool: l, r = 0, len(s) - 1 while l &lt; r: while l &lt; r and not self.alphaNum(s[l]): l += 1 while l &lt; r and not self.alphaNum(s[r]): r-=1 if s[l].lower() != s[r].lower(): return False l, r = l+1, r-1 return True def alphaNum(self, c): return (ord('A') &lt;= ord(c) &lt;= ord('Z') or ord('a') &lt;= ord(c) &lt;= ord('z') or ord('0') &lt;= ord(c) &lt;= ord('9') ) Time Complexity: O(n)
 <a href=https://zalman0813.github.io/posts/valid-palindrome/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/two-point/>two point</a>&nbsp;
