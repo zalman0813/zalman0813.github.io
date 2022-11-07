@@ -2,7 +2,6 @@
 title: "Valid Palindrome"
 date: 2022-11-04T21:07:32+08:00
 draft: false
-draft: False
 tags: ["two point", "169", "easy"]
 series: ["leetcode"]
 categories: ["coding"]
