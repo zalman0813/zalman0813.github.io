@@ -2,16 +2,16 @@
 title: "235. Lowest Common Ancestor of a Binary Search Tree"
 date: 2022-11-11T23:20:24+08:00
 draft: false
-tags: ["dfs", "169", "medium", "binay search"]
+tags: ["dfs", "169", "medium", "binay search", "recursive"]
 series: ["leetcode"]
 categories: ["coding"]
 ---
 
-Link: https://leetcode.com/problems/merge-two-sorted-lists/
+Link: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
 
 Status: done
 
-Solution: two pointer
+Solution: binary search, dfs, recursive
 
 Code:
 1. binary search
