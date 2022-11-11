@@ -16,7 +16,7 @@ Solution: binary search, dfs, recursive
 Code:
 1. binary search
 ```python
-# Time Complexity: O(n)
+# Time Complexity: O(LogN)
 # Space Complexity: O(1)
 class Solution:
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
@@ -34,8 +34,8 @@ class Solution:
 
 2. dfs - without binary search info - "236. Lowest Common Ancestor of a Binary Tree"
 ```python
-# Time Complexity: O(n)
-# Space Complexity: O(n)
+# Time Complexity: O(LogN)
+# Space Complexity: O(LogN)
 class Solution:
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
         
@@ -57,8 +57,8 @@ class Solution:
 
 3. dfs - with binary search info
 ```python
-# Time Complexity: O(n)
-# Space Complexity: O(n)
+# Time Complexity: O(LogN)
+# Space Complexity: O(LogN)
 class Solution:
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
     
