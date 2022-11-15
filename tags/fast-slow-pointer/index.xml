@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>fast &amp; slow pointer on Pin Code Blog</title><link>https://zalman0813.github.io/tags/fast-slow-pointer/</link><description>Recent content in fast &amp; slow pointer on Pin Code Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 15 Nov 2022 22:16:09 +0800</lastBuildDate><atom:link href="https://zalman0813.github.io/tags/fast-slow-pointer/index.xml" rel="self" type="application/rss+xml"/><item><title>141. Linked List Cycle</title><link>https://zalman0813.github.io/posts/linked-list-cycle/</link><pubDate>Tue, 15 Nov 2022 22:16:09 +0800</pubDate><guid>https://zalman0813.github.io/posts/linked-list-cycle/</guid><description>Link: https://leetcode.com/problems/linked-list-cycle/
+Status: done
+Solution: Fast &amp;amp; Slow Pointer
+Code:
+class Solution: def hasCycle(self, head: Optional[ListNode]) -&amp;gt; bool: slow, fast = head, head while fast and fast.next: slow = slow.next fast = fast.next.next if slow == fast: return True return False Time Complexity: O(n)
+Space Complexity: O(1)</description></item></channel></rss>
