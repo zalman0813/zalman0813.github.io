@@ -7,7 +7,7 @@
 &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/first-bad-version/
 Solution: binary search
 Code:
-class Solution: def firstBadVersion(self, n: int) -> int: l, r = 1, n # Find whether the mid version is bad or not # keep r as m is True, # F, F, T ,T , T # l-> m r # l r # l-> # l from false to true, so final l position as minBadVersion if l &lt; r: m = l + (r-l) // 2 # avoid overflow if isBadVersion(m): r = m else: l = m + 1 return l Time Complexity: O(logn)
+class Solution: def firstBadVersion(self, n: int) -> int: l, r = 1, n # Find whether the mid version is bad or not # keep r as m is True, # F, F, T ,T , T # l-> m r # l r # l-> # l from false to true, so final l position as minBadVersion while l &lt; r: m = l + (r-l) // 2 # avoid overflow if isBadVersion(m): r = m else: l = m + 1 return l Time Complexity: O(logn)
 <a href=https://zalman0813.github.io/posts/first-bad-version/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/binary-search/>binary search</a>&nbsp;
 <a href=https://zalman0813.github.io/tags/169/>169</a>&nbsp;
 <a href=https://zalman0813.github.io/tags/easy/>easy</a>&nbsp;</div></article></div></div></div></div><footer class=post-footer><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><ul class="list-inline text-center footer-links"></ul><p class="credits copyright text-muted">&nbsp;&bull;&nbsp;&copy;
