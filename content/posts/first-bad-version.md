@@ -25,7 +25,7 @@ class Solution:
         #    l  r
         #    l->
         # l from false to true, so final l position as minBadVersion
-        if l < r:
+        while l < r:
             m = l + (r-l) // 2 # avoid overflow
             if isBadVersion(m):
                 r = m 
