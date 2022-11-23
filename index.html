@@ -8,15 +8,22 @@
 linked-list</p><p>Code:
 linked-list</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Time Complexity: O(n)</span>
 </span></span><span style=display:flex><span><span style=color:#75715e># Space Complexity: O(1)</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Definition for singly-linked list.</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># class ListNode:</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#     def __init__(self, val=0, next=None):</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#         self.val = val</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#         self.next = next</span>
 </span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>twoSum</span>(self, nums: List[int], target: int) <span style=color:#f92672>-&gt;</span> List[int]:
-</span></span><span style=display:flex><span>        hashMap <span style=color:#f92672>=</span> {}
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>reverseList</span>(self, head: Optional[ListNode]) <span style=color:#f92672>-&gt;</span> Optional[ListNode]:
+</span></span><span style=display:flex><span>        prev, cur  <span style=color:#f92672>=</span> <span style=color:#66d9ef>None</span>, head
 </span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> i, num <span style=color:#f92672>in</span> enumerate(nums):
-</span></span><span style=display:flex><span>            rest <span style=color:#f92672>=</span> target <span style=color:#f92672>-</span> num
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> rest <span style=color:#f92672>in</span> hashMap:
-</span></span><span style=display:flex><span>                <span style=color:#66d9ef>return</span> [i, hashMap[rest] ]
-</span></span><span style=display:flex><span>            hashMap[num] <span style=color:#f92672>=</span> i
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>while</span> cur:
+</span></span><span style=display:flex><span>            tmp <span style=color:#f92672>=</span> cur<span style=color:#f92672>.</span>next
+</span></span><span style=display:flex><span>            cur<span style=color:#f92672>.</span>next <span style=color:#f92672>=</span> prev
+</span></span><span style=display:flex><span>            prev <span style=color:#f92672>=</span> cur
+</span></span><span style=display:flex><span>            cur <span style=color:#f92672>=</span> tmp
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> prev
 </span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/linked-list/>linked list</a>&nbsp;
 <a href=https://zalman0813.github.io/tags/169/>169</a>&nbsp;
 <a href=https://zalman0813.github.io/tags/easy/>easy</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/longest-palindrome/><h2 class=post-title>409. Longest Palindrome</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on November 22, 2022
