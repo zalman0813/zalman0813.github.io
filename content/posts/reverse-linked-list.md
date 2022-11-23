@@ -17,15 +17,22 @@ Code:
 ```python
 # Time Complexity: O(n)
 # Space Complexity: O(1)
+
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        hashMap = {}
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        prev, cur  = None, head
         
-        for i, num in enumerate(nums):
-            rest = target - num
-            if rest in hashMap:
-                return [i, hashMap[rest] ]
-            hashMap[num] = i
+        while cur:
+            tmp = cur.next
+            cur.next = prev
+            prev = cur
+            cur = tmp
+        return prev
 ```
 
 
