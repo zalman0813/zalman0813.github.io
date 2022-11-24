@@ -2,4 +2,4 @@
 Status: done
 Solution: sorted, counting
 Code:
-sorted # Time Complexity: O(nlogn) # Space Complexity: O(1) class Solution: def majorityElement(self, nums: List[int]) -&amp;gt; int: nums.sort(reverse=True) # majority element that appears more than ⌊n / 2⌋ times, so mid will be the majority element. mid = len(nums) // 2 return nums[mid] counting # Time Complexity: O(n) # Space Complexity: O(1) class Solution: def majorityElement(self, nums: List[int]) -&amp;gt; int: res, counts = 0, 0 for n in nums: # When counts == 0, we initate res.</description></item></channel></rss>
+sorted # Time Complexity: O(nlogn) # Space Complexity: O(1) class Solution: def majorityElement(self, nums: List[int]) -&amp;gt; int: nums.sort() # majority element that appears more than ⌊n / 2⌋ times, so mid will be the majority element. mid = len(nums) // 2 return nums[mid] counting # Time Complexity: O(n) # Space Complexity: O(1) class Solution: def majorityElement(self, nums: List[int]) -&amp;gt; int: res, counts = 0, 0 for n in nums: # When counts == 0, we initate res.</description></item></channel></rss>

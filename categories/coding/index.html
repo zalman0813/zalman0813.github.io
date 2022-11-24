@@ -8,7 +8,7 @@
 Status: done
 Solution: sorted, counting
 Code:
-sorted # Time Complexity: O(nlogn) # Space Complexity: O(1) class Solution: def majorityElement(self, nums: List[int]) -> int: nums.sort(reverse=True) # majority element that appears more than ⌊n / 2⌋ times, so mid will be the majority element. mid = len(nums) // 2 return nums[mid] counting # Time Complexity: O(n) # Space Complexity: O(1) class Solution: def majorityElement(self, nums: List[int]) -> int: res, counts = 0, 0 for n in nums: # When counts == 0, we initate res.
+sorted # Time Complexity: O(nlogn) # Space Complexity: O(1) class Solution: def majorityElement(self, nums: List[int]) -> int: nums.sort() # majority element that appears more than ⌊n / 2⌋ times, so mid will be the majority element. mid = len(nums) // 2 return nums[mid] counting # Time Complexity: O(n) # Space Complexity: O(1) class Solution: def majorityElement(self, nums: List[int]) -> int: res, counts = 0, 0 for n in nums: # When counts == 0, we initate res.
 <a href=https://zalman0813.github.io/posts/majority-element/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/sorted/>sorted</a>&nbsp;
 <a href=https://zalman0813.github.io/tags/169/>169</a>&nbsp;
 <a href=https://zalman0813.github.io/tags/easy/>easy</a>&nbsp;
