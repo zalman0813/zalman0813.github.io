@@ -20,7 +20,7 @@ Code:
 # Space Complexity: O(1)
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        nums.sort(reverse=True)
+        nums.sort()
         # majority element that appears more than ⌊n / 2⌋ times, so mid will be the majority element.
         mid = len(nums) // 2
         return nums[mid]
