@@ -3,7 +3,33 @@
 <span class=icon-bar></span>
 <span class=icon-bar></span>
 <span class=icon-bar></span></button>
-<a class=navbar-brand href=https://zalman0813.github.io>Pin Code Blog</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"></ul></div></div></nav><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=tags-heading><h1>169</h1><hr class=small></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-md-10 col-md-offset-1"><div class=posts-list><article class=post-preview><a href=https://zalman0813.github.io/posts/valid-parenthess/><h2 class=post-title>20. Valid Parenthess</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on November 1, 2022
+<a class=navbar-brand href=https://zalman0813.github.io>Pin Code Blog</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"></ul></div></div></nav><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=tags-heading><h1>169</h1><hr class=small></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-md-10 col-md-offset-1"><div class=posts-list><article class=post-preview><a href=https://zalman0813.github.io/posts/merge-two-sorted-lists/><h2 class=post-title>Merge Two Sorted Lists</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on November 2, 2022
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/merge-two-sorted-lists/>https://leetcode.com/problems/merge-two-sorted-lists/</a></p><p>Status: done</p><p>Solution: two pointer</p><p>Code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>mergeTwoLists</span>(self, list1: Optional[ListNode], list2: Optional[ListNode]) <span style=color:#f92672>-&gt;</span> Optional[ListNode]:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        dummy <span style=color:#f92672>=</span> ListNode()
+</span></span><span style=display:flex><span>        tail <span style=color:#f92672>=</span> dummy
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>while</span> list1 <span style=color:#f92672>and</span> list2:
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> list1<span style=color:#f92672>.</span>val <span style=color:#f92672>&gt;</span> list2<span style=color:#f92672>.</span>val:
+</span></span><span style=display:flex><span>                tail<span style=color:#f92672>.</span>next <span style=color:#f92672>=</span> list2
+</span></span><span style=display:flex><span>                list2 <span style=color:#f92672>=</span> list2<span style=color:#f92672>.</span>next
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>                tail<span style=color:#f92672>.</span>next <span style=color:#f92672>=</span> list1
+</span></span><span style=display:flex><span>                list1 <span style=color:#f92672>=</span> list1<span style=color:#f92672>.</span>next
+</span></span><span style=display:flex><span>            tail <span style=color:#f92672>=</span> tail<span style=color:#f92672>.</span>next
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> list1:
+</span></span><span style=display:flex><span>            tail<span style=color:#f92672>.</span>next <span style=color:#f92672>=</span> list1
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> list2:
+</span></span><span style=display:flex><span>            tail<span style=color:#f92672>.</span>next <span style=color:#f92672>=</span> list2
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> dummy<span style=color:#f92672>.</span>next
+</span></span></code></pre></div><p>Time Complexity: O(n)</p><p>Space Complexity: O(1)</p></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/two-pointer/>two pointer</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/169/>169</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/easy/>easy</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/liniked-list/>liniked list</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/valid-parenthess/><h2 class=post-title>20. Valid Parenthess</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on November 1, 2022
 &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/valid-parentheses/>https://leetcode.com/problems/valid-parentheses/</a></p><p>Tags: 169, easy, stack</p><p>Status: Done</p><p>Solution: Stack</p><p>Code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>isValid</span>(self, s: str) <span style=color:#f92672>-&gt;</span> bool:
 </span></span><span style=display:flex><span>        stack <span style=color:#f92672>=</span> []
