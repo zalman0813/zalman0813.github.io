@@ -17,7 +17,7 @@ Code:
 ```python
 class Solution:
     def meetingRooms(self, intervals: List[int]) -> bool:
-        intervals.sorted(lambda x: x.start)
+        intervals.sort(lambda x: x.start)
         for i in range(1, len(intervals)):
             i1 = intervals[i - 1]
             i2 = intervals[i]
