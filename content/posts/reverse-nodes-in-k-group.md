@@ -70,21 +70,25 @@ recursive? - https://leetcode.com/problems/reverse-nodes-in-k-group/solutions/11
 #         self.next = next
 class Solution:
     def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
-        if not head and not head.next:
-            return head
+        # Check if we need to reverse the group
+        curr = head
+        for _ in range(k):
+            if not curr: return head
+            curr = curr.next
+		        
+				
+        # Reverse the group (basic way to reverse linked list)
+        prev = None
+        curr = head
+        for _ in range(k):
+            nxt = curr.next
+            curr.next = prev
+            prev = curr
+            curr = nxt
         
-        tail = head
-        for i in range(k):
-            if not tail:
-                return tail
-            tail = tail.next
-
-        tail = self.reverseGroup(tail, k)
-
-        for i in range(k):
-            next = head.next
-            head.next = tail
-            tail = head
-            head = next
-        return tail
+		
+        # After reverse, we know that `head` is the tail of the group.
+		# And `curr` is the next pointer in original linked list order
+        head.next = self.reverseKGroup(curr, k)
+        return prev
 ```
