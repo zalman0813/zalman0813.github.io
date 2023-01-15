@@ -2,7 +2,7 @@
 title: "295. Find Median From Data Stream"
 date: 2023-01-15T19:28:37+08:00
 draft: false
-tags: ["two heap", "hard"]
+tags: ["two heaps", "hard"]
 series: ["leetcode"]
 categories: ["coding"]
 ---
@@ -26,7 +26,8 @@ class MedianFinder:
         self.maxHeap = []
         self.minHeap = []
 
-    def addNum(self, num: int) -> None:
+
+    def addNum(self, num: int) -> None
 
         if not self.maxHeap or -self.maxHeap[0] >= num:
             heappush(self.maxHeap, -num)
