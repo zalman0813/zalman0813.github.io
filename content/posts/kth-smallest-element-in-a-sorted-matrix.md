@@ -16,8 +16,8 @@ K-way merge
 
 ```python
 
-# Time Complexity: O(klogm), where m is number of lists
-# Space Complexity: O(n) , where n is the total number of elements in all m input lists.
+# Time Complexity: O(nlogn+(klogn))=O((n+k)logn)
+# Space Complexity: O(n*n)
 class Solution:
     def kthSmallest(self, matrix: List[List[int]], k: int) -> int:
         # TODO: Write your code here
