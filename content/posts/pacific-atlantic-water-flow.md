@@ -11,8 +11,7 @@ Link: https://leetcode.com/problems/pacific-atlantic-water-flow/
 
 Solution: dfs
 
-Code:
-bfs
+Code: dfs
 
 ```python
 
