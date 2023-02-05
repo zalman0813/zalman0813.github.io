@@ -3,7 +3,17 @@
 <span class=icon-bar></span>
 <span class=icon-bar></span>
 <span class=icon-bar></span></button>
-<a class=navbar-brand href=https://zalman0813.github.io>Pin Code Blog</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"></ul></div></div></nav><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=tags-heading><h1>169</h1><hr class=small></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-md-10 col-md-offset-1"><div class=posts-list><article class=post-preview><a href=https://zalman0813.github.io/posts/flood-fill/><h2 class=post-title>733. Flood Fill</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on November 10, 2022
+<a class=navbar-brand href=https://zalman0813.github.io>Pin Code Blog</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"></ul></div></div></nav><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=tags-heading><h1>169</h1><hr class=small></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-md-10 col-md-offset-1"><div class=posts-list><article class=post-preview><a href=https://zalman0813.github.io/posts/lca-of-a-binary-search-tree/><h2 class=post-title>235. Lowest Common Ancestor of a Binary Search Tree</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on November 11, 2022
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
+Status: done
+Solution: binary search, dfs, recursive
+Code:
+binary search # Time Complexity: O(LogN) # Space Complexity: O(1) class Solution: def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode': cur = root while cur: if cur.val > p.val and cur.val > q.val: cur = cur.left elif cur.val &lt; p.val and cur.val &lt; q.val: cur = cur.right else: return cur dfs - without binary search info - &ldquo;236. Lowest Common Ancestor of a Binary Tree&rdquo; # Time Complexity: O(LogN) # Space Complexity: O(LogN) class Solution: def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode': if root == p or root == q or not root: return root left = self.
+<a href=https://zalman0813.github.io/posts/lca-of-a-binary-search-tree/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/dfs/>dfs</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/169/>169</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/binay-search/>binay search</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/recursive/>recursive</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/flood-fill/><h2 class=post-title>733. Flood Fill</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on November 10, 2022
 &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/flood-fill/
 Solution: dfs
 Code:

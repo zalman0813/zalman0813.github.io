@@ -3,7 +3,13 @@
 <span class=icon-bar></span>
 <span class=icon-bar></span>
 <span class=icon-bar></span></button>
-<a class=navbar-brand href=https://zalman0813.github.io>Pin Code Blog</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"></ul></div></div></nav><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=categories-heading><h1>coding</h1><hr class=small></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-md-10 col-md-offset-1"><div class=posts-list><article class=post-preview><a href=https://zalman0813.github.io/posts/find-median-from-data-stream/><h2 class=post-title>295. Find Median From Data Stream</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on January 15, 2023
+<a class=navbar-brand href=https://zalman0813.github.io>Pin Code Blog</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"></ul></div></div></nav><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=categories-heading><h1>coding</h1><hr class=small></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-md-10 col-md-offset-1"><div class=posts-list><article class=post-preview><a href=https://zalman0813.github.io/posts/path-sum-iii/><h2 class=post-title>437. Path Sum Iii</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on January 15, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/path-sum-iii/
+Solution: DFS Code:
+# Time Complexity: O(n) # Space Complexity: O(n) def count_paths(root, S): # TODO: Write your code here m = {} return count_paths_recursive(root, S, m, 0) def count_paths_recursive(curNode, S, cached, curPathSum): if not curNode: return 0 curPathSum += curNode.val path_count = 0 if curPathSum == S: path_count += 1 path_count += cached.get(curPathSum - S, 0) cached[curPathSum] = cached.get(curPathSum, 0) + 1 path_count += count_paths_recursive(curNode.left, S, cached, curPathSum) path_count += count_paths_recursive(curNode.
+<a href=https://zalman0813.github.io/posts/path-sum-iii/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/dfs/>dfs</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/cached/>cached</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/mediam/>mediam</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/find-median-from-data-stream/><h2 class=post-title>295. Find Median From Data Stream</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on January 15, 2023
 &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/find-median-from-data-stream
 Solution: two heaps Code:
 # Time Complexity: # addNume: O(logn) # findMedian: O(1) # Space Complexity: O(n) from heapq import * class MedianFinder: def __init__(self): self.maxHeap = [] self.minHeap = [] def addNum(self, num: int) -> None if not self.maxHeap or -self.maxHeap[0] >= num: heappush(self.maxHeap, -num) else: heappush(self.minHeap, num) # more element than the min-heap # i.e. maxHeap [-5, -3, -1], minHeap [6, 7] if len(self.maxHeap) > len(self.minHeap) + 1: heappush(self.
@@ -75,31 +81,6 @@ Code: Time Complexity: O(n)
 Space Complexity: O(1)
 class Solution: def closetTarget(self, words: List[str], target: str, startIndex: int) -> int: if words[startIndex] == target: return 0 n = len(words) i = (startIndex + 1) % n step = 1 min_step = n while i != startIndex: if words[i] == target: min_step = min( step , min_step ) step += 1 i = (i + 1) % n step = 1 i = (startIndex - 1 + n) % n while i !
 <a href=https://zalman0813.github.io/posts/shortest-distance-to-target-string-in-a-circular-array/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/two-pointers/>two pointers</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/169/>169</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/easy/>easy</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/sort-colors/><h2 class=post-title>75. Sort Colors</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on December 25, 2022
-&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/sort-colors>https://leetcode.com/problems/sort-colors</a></p><p>Status: done</p><p>Solution: two pointers</p><p>Code:
-Time Complexity: O(n)</p><p>Space Complexity: O(1)</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>sortColors</span>(self, arr: List[int]) <span style=color:#f92672>-&gt;</span> <span style=color:#66d9ef>None</span>:
-</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;&#34;&#34;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>        Do not return anything, modify nums in-place instead.
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>        &#34;&#34;&#34;</span>
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>        low <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
-</span></span><span style=display:flex><span>        high <span style=color:#f92672>=</span> len(arr) <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>        i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>while</span> i <span style=color:#f92672>&lt;=</span> high:
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> arr[i] <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:
-</span></span><span style=display:flex><span>                arr[i], arr[low] <span style=color:#f92672>=</span> arr[low], arr[i]
-</span></span><span style=display:flex><span>                low <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>                i <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>elif</span> arr[i] <span style=color:#f92672>==</span> <span style=color:#ae81ff>2</span>:
-</span></span><span style=display:flex><span>                arr[i], arr[high] <span style=color:#f92672>=</span> arr[high], arr[i]
-</span></span><span style=display:flex><span>                high <span style=color:#f92672>-=</span> <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>else</span>:
-</span></span><span style=display:flex><span>                i <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>            
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> arr
-</span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/two-pointers/>two pointers</a>&nbsp;
 <a href=https://zalman0813.github.io/tags/169/>169</a>&nbsp;
 <a href=https://zalman0813.github.io/tags/easy/>easy</a>&nbsp;</div></article></div><ul class="pager main-pager"><li class=previous><a href=https://zalman0813.github.io/categories/coding/page/1/>&larr; Newer Posts</a></li><li class=next><a href=https://zalman0813.github.io/categories/coding/page/3/>Older Posts &rarr;</a></li></ul></div></div></div><footer class=post-footer><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><ul class="list-inline text-center footer-links"></ul><p class="credits copyright text-muted">&nbsp;&bull;&nbsp;&copy;
 2023
