@@ -3,7 +3,45 @@
 <span class=icon-bar></span>
 <span class=icon-bar></span>
 <span class=icon-bar></span></button>
-<a class=navbar-brand href=https://zalman0813.github.io>Pin Code Blog</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"></ul></div></div></nav><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=tags-heading><h1>binary search</h1><hr class=small></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-md-10 col-md-offset-1"><div class=posts-list><article class=post-preview><a href=https://zalman0813.github.io/posts/first-bad-version/><h2 class=post-title>278. First Bad Version</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on November 17, 2022
+<a class=navbar-brand href=https://zalman0813.github.io>Pin Code Blog</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"></ul></div></div></nav><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=tags-heading><h1>binary search</h1><hr class=small></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-md-10 col-md-offset-1"><div class=posts-list><article class=post-preview><a href=https://zalman0813.github.io/posts/median-of-two-sorted-arrays/><h2 class=post-title>4. Median of Two Sorted Arrays</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on February 12, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/median-of-two-sorted-arrays/>https://leetcode.com/problems/median-of-two-sorted-arrays/</a></p><p>Solution: k-ways merge</p><p>Code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Time Complexity: O(log(min(m,n)))</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Space Complexity: O(1)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>findMedianSortedArrays</span>(self, nums1: List[int], nums2: List[int]) <span style=color:#f92672>-&gt;</span> float:
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> len(nums1) <span style=color:#f92672>&gt;</span> len(nums2):
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> self<span style=color:#f92672>.</span>findMedianSortedArrays(nums2, nums1)
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> len(nums1) <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> len(nums2) <span style=color:#f92672>%</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>return</span> (nums2[len(nums2)<span style=color:#f92672>//</span><span style=color:#ae81ff>2</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>] <span style=color:#f92672>+</span> nums2[len(nums2)<span style=color:#f92672>//</span><span style=color:#ae81ff>2</span>])<span style=color:#f92672>/</span><span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>return</span> nums2[len(nums2)<span style=color:#f92672>//</span><span style=color:#ae81ff>2</span>]
+</span></span><span style=display:flex><span>        tot_len <span style=color:#f92672>=</span> len(nums1) <span style=color:#f92672>+</span> len(nums2)
+</span></span><span style=display:flex><span>        start, end <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>, len(nums1)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>while</span> start <span style=color:#f92672>&lt;=</span> end:
+</span></span><span style=display:flex><span>            cut_1 <span style=color:#f92672>=</span> (start <span style=color:#f92672>+</span> end) <span style=color:#f92672>//</span> <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>            cut_2 <span style=color:#f92672>=</span> (tot_len <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>) <span style=color:#f92672>//</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>-</span> cut_1
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            left_1 <span style=color:#f92672>=</span> float(<span style=color:#f92672>-</span>inf) <span style=color:#66d9ef>if</span> cut_1 <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span> <span style=color:#66d9ef>else</span> nums1[cut_1 <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>]
+</span></span><span style=display:flex><span>            right_1 <span style=color:#f92672>=</span> float(inf) <span style=color:#66d9ef>if</span> cut_1 <span style=color:#f92672>==</span> len(nums1) <span style=color:#66d9ef>else</span> nums1[cut_1]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            left_2 <span style=color:#f92672>=</span>  float(<span style=color:#f92672>-</span>inf) <span style=color:#66d9ef>if</span> cut_2 <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span> <span style=color:#66d9ef>else</span> nums2[cut_2 <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>]
+</span></span><span style=display:flex><span>            right_2 <span style=color:#f92672>=</span> float(inf) <span style=color:#66d9ef>if</span> cut_2 <span style=color:#f92672>==</span> len(nums2) <span style=color:#66d9ef>else</span> nums2[cut_2]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> left_1 <span style=color:#f92672>&gt;</span> right_2:
+</span></span><span style=display:flex><span>                end <span style=color:#f92672>=</span> cut_1 <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>elif</span> left_2 <span style=color:#f92672>&gt;</span> right_1:
+</span></span><span style=display:flex><span>                start <span style=color:#f92672>=</span> cut_1 <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>if</span> tot_len <span style=color:#f92672>%</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:
+</span></span><span style=display:flex><span>                    <span style=color:#66d9ef>return</span> (max(left_1, left_2) <span style=color:#f92672>+</span> min(right_1, right_2)) <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>                    <span style=color:#66d9ef>return</span> max(left_1, left_2)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>
+</span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/k-ways-merge/>k-ways merge</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/binary-search/>binary search</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/hard/>hard</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/first-bad-version/><h2 class=post-title>278. First Bad Version</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on November 17, 2022
 &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/first-bad-version/
 Solution: binary search
 Code:
