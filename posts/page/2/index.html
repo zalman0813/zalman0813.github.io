@@ -3,7 +3,40 @@
 <span class=icon-bar></span>
 <span class=icon-bar></span>
 <span class=icon-bar></span></button>
-<a class=navbar-brand href=https://zalman0813.github.io>Pin Code Blog</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"></ul></div></div></nav><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=posts-heading><h1>Posts</h1><hr class=small></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-md-10 col-md-offset-1"><div class=posts-list><article class=post-preview><a href=https://zalman0813.github.io/posts/sort-the-students-by-their-kth-score/><h2 class=post-title>6297. Sort the Students by Their Kth Score</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on January 22, 2023
+<a class=navbar-brand href=https://zalman0813.github.io>Pin Code Blog</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"></ul></div></div></nav><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=posts-heading><h1>Posts</h1><hr class=small></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-md-10 col-md-offset-1"><div class=posts-list><article class=post-preview><a href=https://zalman0813.github.io/posts/find-right-interval/><h2 class=post-title>436. Find Right Interval</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on January 22, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/find-right-interval/>https://leetcode.com/problems/find-right-interval/</a></p><p>Solution: two heaps</p><p>Code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Time Complexity: O(nlogn)</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Space Complexity: O(n)</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>findRightInterval</span>(self, intervals: List[List[int]]) <span style=color:#f92672>-&gt;</span> List[int]:
+</span></span><span style=display:flex><span>        n <span style=color:#f92672>=</span> len(intervals)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># heaps for finding the maximum start and end</span>
+</span></span><span style=display:flex><span>        maxStartHeap, maxEndHeap <span style=color:#f92672>=</span> [], []
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        result <span style=color:#f92672>=</span> [<span style=color:#ae81ff>0</span> <span style=color:#66d9ef>for</span> x <span style=color:#f92672>in</span> range(n)]
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> endIndex <span style=color:#f92672>in</span> range(n):
+</span></span><span style=display:flex><span>            heappush(maxStartHeap, (<span style=color:#f92672>-</span>intervals[endIndex][<span style=color:#ae81ff>0</span>], endIndex))
+</span></span><span style=display:flex><span>            heappush(maxEndHeap, (<span style=color:#f92672>-</span>intervals[endIndex][<span style=color:#ae81ff>1</span>], endIndex))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># go through all the intervals to find each interval&#39;s next interval</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> _ <span style=color:#f92672>in</span> range(n):
+</span></span><span style=display:flex><span>            <span style=color:#75715e># let&#39;s find the next interval of the interval which has the highest &#39;end&#39;</span>
+</span></span><span style=display:flex><span>            topEnd, endIndex <span style=color:#f92672>=</span> heappop(maxEndHeap)
+</span></span><span style=display:flex><span>            result[endIndex] <span style=color:#f92672>=</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>  <span style=color:#75715e># defaults to - 1</span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> <span style=color:#f92672>-</span>maxStartHeap[<span style=color:#ae81ff>0</span>][<span style=color:#ae81ff>0</span>] <span style=color:#f92672>&gt;=</span> <span style=color:#f92672>-</span>topEnd:
+</span></span><span style=display:flex><span>                topStart, startIndex <span style=color:#f92672>=</span> heappop(maxStartHeap)
+</span></span><span style=display:flex><span>                <span style=color:#75715e># find the the interval that has the closest &#39;start&#39;</span>
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>while</span> maxStartHeap <span style=color:#f92672>and</span> <span style=color:#f92672>-</span>maxStartHeap[<span style=color:#ae81ff>0</span>][<span style=color:#ae81ff>0</span>] <span style=color:#f92672>&gt;=</span> <span style=color:#f92672>-</span>topEnd:
+</span></span><span style=display:flex><span>                    topStart, startIndex <span style=color:#f92672>=</span> heappop(maxStartHeap)
+</span></span><span style=display:flex><span>                result[endIndex] <span style=color:#f92672>=</span> startIndex
+</span></span><span style=display:flex><span>                <span style=color:#75715e># put the interval back as it could be the next interval of other intervals</span>
+</span></span><span style=display:flex><span>                heappush(maxStartHeap, (topStart, startIndex))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> result
+</span></span><span style=display:flex><span>        
+</span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/two-heaps/>two heaps</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/hard/>hard</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/sort-the-students-by-their-kth-score/><h2 class=post-title>6297. Sort the Students by Their Kth Score</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on January 22, 2023
 &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/contest/weekly-contest-329/problems/sort-the-students-by-their-kth-score/>https://leetcode.com/contest/weekly-contest-329/problems/sort-the-students-by-their-kth-score/</a></p><p>Code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Time Complexity: O(nlogn)</span>
 </span></span><span style=display:flex><span><span style=color:#75715e># Space Complexity: O(n)</span>
 </span></span><span style=display:flex><span><span style=color:#f92672>from</span> heapq <span style=color:#f92672>import</span> <span style=color:#f92672>*</span>
@@ -80,13 +113,6 @@ Solution: slow-fast Code: in-place reverse
 # Time Complexity: O(n) # Space Complexity: O(n) class Solution: def circularArrayLoop(self, arr: List[int]) -> bool: #remember all the numbers that have been visited visited = set() for i in range(len(arr)): if i in visited: continue is_forward = arr[i] >= 0 # if we are moving forward or not slow, fast = i, i # if slow or fast becomes '-1' this means we can't find cycle for this number while True: # move one step for slow pointer slow = self.
 <a href=https://zalman0813.github.io/posts/circular-array-loop/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/linked-list/>linked list</a>&nbsp;
 <a href=https://zalman0813.github.io/tags/slow-fast/>slow fast</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/rotate-list/><h2 class=post-title>61. Rotate List</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on January 8, 2023
-&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/rotate-list
-Solution: linked-list
-Code: in-place reverse
-# Time Complexity: O(n) # Space Complexity: O(1) # Definition for singly-linked list. # class ListNode: # def __init__(self, val=0, next=None): # self.val = val # self.next = next class Solution: def rotateRight(self, head: Optional[ListNode], k: int) -> Optional[ListNode]: if k &lt;= 0 or not head: return head # find last node and length last_node = head list_length = 1 while last_node.next: last_node = last_node.
-<a href=https://zalman0813.github.io/posts/rotate-list/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/linked-list/>linked list</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/in-place-reverse/>in-place reverse</a>&nbsp;
 <a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;</div></article></div><ul class="pager main-pager"><li class=previous><a href=https://zalman0813.github.io/posts/page/1/>&larr; Newer Posts</a></li><li class=next><a href=https://zalman0813.github.io/posts/page/3/>Older Posts &rarr;</a></li></ul></div></div></div><footer class=post-footer><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><ul class="list-inline text-center footer-links"></ul><p class="credits copyright text-muted">&nbsp;&bull;&nbsp;&copy;
 2023
 &nbsp;&bull;&nbsp;

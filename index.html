@@ -3,7 +3,36 @@
 <span class=icon-bar></span>
 <span class=icon-bar></span>
 <span class=icon-bar></span></button>
-<a class=navbar-brand href=https://zalman0813.github.io>Pin Code Blog</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"></ul></div></div></nav><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=page-heading><h1>Pin Code Blog</h1><hr class=small></div></div></div></div></div></header><div role=main class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=posts-list><article class=post-preview><a href=https://zalman0813.github.io/posts/reorganize-string/><h2 class=post-title>767. Reorganize String</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on February 12, 2023
+<a class=navbar-brand href=https://zalman0813.github.io>Pin Code Blog</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"></ul></div></div></nav><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=page-heading><h1>Pin Code Blog</h1><hr class=small></div></div></div></div></div></header><div role=main class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=posts-list><article class=post-preview><a href=https://zalman0813.github.io/posts/k-closest-points-to-origin/><h2 class=post-title>973. K Closest Points to Origin</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on February 12, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/k-closest-points-to-origin/description/>https://leetcode.com/problems/k-closest-points-to-origin/description/</a></p><p>Solution: top k elements
+Code:
+top k elements</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Time Complexity: O(nlogk)</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Space Complexity: O(k)</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> heapq
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>kClosest</span>(self, points: List[List[int]], K: int) <span style=color:#f92672>-&gt;</span> List[List[int]]:
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        maxHeap <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> (x, y) <span style=color:#f92672>in</span> points:
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> len(maxHeap) <span style=color:#f92672>==</span> K:
+</span></span><span style=display:flex><span>                head_x <span style=color:#f92672>=</span> maxHeap[<span style=color:#ae81ff>0</span>][<span style=color:#ae81ff>1</span>][<span style=color:#ae81ff>0</span>]
+</span></span><span style=display:flex><span>                head_y <span style=color:#f92672>=</span> maxHeap[<span style=color:#ae81ff>0</span>][<span style=color:#ae81ff>1</span>][<span style=color:#ae81ff>1</span>]
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>if</span> self<span style=color:#f92672>.</span>distance(x, y) <span style=color:#f92672>&lt;</span> self<span style=color:#f92672>.</span>distance(head_x, head_y):
+</span></span><span style=display:flex><span>                    heapq<span style=color:#f92672>.</span>heappop(maxHeap)
+</span></span><span style=display:flex><span>                    heapq<span style=color:#f92672>.</span>heappush(maxHeap, [<span style=color:#f92672>-</span>self<span style=color:#f92672>.</span>distance(x, y), (x, y)])
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>                heapq<span style=color:#f92672>.</span>heappush(maxHeap, [<span style=color:#f92672>-</span>self<span style=color:#f92672>.</span>distance(x, y), (x, y)])
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> [[point[<span style=color:#ae81ff>0</span>], point[<span style=color:#ae81ff>1</span>]] <span style=color:#66d9ef>for</span> dist, point <span style=color:#f92672>in</span> maxHeap]
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>distance</span>(self, x, y):
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> (x<span style=color:#f92672>*</span>x <span style=color:#f92672>+</span> y<span style=color:#f92672>*</span>y)
+</span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/top-k-elements/>top K elements</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/maxheap/>maxHeap</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/reorganize-string/><h2 class=post-title>767. Reorganize String</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on February 12, 2023
 &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/reorganize-string/
 Solution: top k elements
 Code:
@@ -125,39 +154,6 @@ Solution: sliding windows
 Code:
 # O(n∗m∗len) where ‘n’ is the number of characters in the given string, ‘m’ is the total number of words, and ‘len’ is the length of a word. # Space Complexity: O(n+m) class Solution: def findSubstring(self, str1: str, words: List[str]) -> List[int]: result_indices = [] # TODO: Write your code here word_freq = Counter(words) word_count = len(words) word_length = len(words[0]) for i in range((len(str1) - word_count * word_length) + 1): word_seen = {} for j in range(word_count): next_word_index = i + j * word_length # if not equal to the word # Get the next word from the string word = str1[next_word_index: next_word_index + word_length] if word not in word_freq: # Break if we don't need this word break word_seen[word] = 1 + word_seen.
 <a href=https://zalman0813.github.io/posts/substring-with-concatenation-of-all-words/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/sliding-windows/>sliding windows</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/hard/>hard</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/find-right-interval/><h2 class=post-title>436. Find Right Interval</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on January 22, 2023
-&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/find-right-interval/>https://leetcode.com/problems/find-right-interval/</a></p><p>Solution: two heaps</p><p>Code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Time Complexity: O(nlogn)</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Space Complexity: O(n)</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>findRightInterval</span>(self, intervals: List[List[int]]) <span style=color:#f92672>-&gt;</span> List[int]:
-</span></span><span style=display:flex><span>        n <span style=color:#f92672>=</span> len(intervals)
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>        <span style=color:#75715e># heaps for finding the maximum start and end</span>
-</span></span><span style=display:flex><span>        maxStartHeap, maxEndHeap <span style=color:#f92672>=</span> [], []
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>        result <span style=color:#f92672>=</span> [<span style=color:#ae81ff>0</span> <span style=color:#66d9ef>for</span> x <span style=color:#f92672>in</span> range(n)]
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> endIndex <span style=color:#f92672>in</span> range(n):
-</span></span><span style=display:flex><span>            heappush(maxStartHeap, (<span style=color:#f92672>-</span>intervals[endIndex][<span style=color:#ae81ff>0</span>], endIndex))
-</span></span><span style=display:flex><span>            heappush(maxEndHeap, (<span style=color:#f92672>-</span>intervals[endIndex][<span style=color:#ae81ff>1</span>], endIndex))
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>        <span style=color:#75715e># go through all the intervals to find each interval&#39;s next interval</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> _ <span style=color:#f92672>in</span> range(n):
-</span></span><span style=display:flex><span>            <span style=color:#75715e># let&#39;s find the next interval of the interval which has the highest &#39;end&#39;</span>
-</span></span><span style=display:flex><span>            topEnd, endIndex <span style=color:#f92672>=</span> heappop(maxEndHeap)
-</span></span><span style=display:flex><span>            result[endIndex] <span style=color:#f92672>=</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>  <span style=color:#75715e># defaults to - 1</span>
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> <span style=color:#f92672>-</span>maxStartHeap[<span style=color:#ae81ff>0</span>][<span style=color:#ae81ff>0</span>] <span style=color:#f92672>&gt;=</span> <span style=color:#f92672>-</span>topEnd:
-</span></span><span style=display:flex><span>                topStart, startIndex <span style=color:#f92672>=</span> heappop(maxStartHeap)
-</span></span><span style=display:flex><span>                <span style=color:#75715e># find the the interval that has the closest &#39;start&#39;</span>
-</span></span><span style=display:flex><span>                <span style=color:#66d9ef>while</span> maxStartHeap <span style=color:#f92672>and</span> <span style=color:#f92672>-</span>maxStartHeap[<span style=color:#ae81ff>0</span>][<span style=color:#ae81ff>0</span>] <span style=color:#f92672>&gt;=</span> <span style=color:#f92672>-</span>topEnd:
-</span></span><span style=display:flex><span>                    topStart, startIndex <span style=color:#f92672>=</span> heappop(maxStartHeap)
-</span></span><span style=display:flex><span>                result[endIndex] <span style=color:#f92672>=</span> startIndex
-</span></span><span style=display:flex><span>                <span style=color:#75715e># put the interval back as it could be the next interval of other intervals</span>
-</span></span><span style=display:flex><span>                heappush(maxStartHeap, (topStart, startIndex))
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> result
-</span></span><span style=display:flex><span>        
-</span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/two-heaps/>two heaps</a>&nbsp;
 <a href=https://zalman0813.github.io/tags/hard/>hard</a>&nbsp;</div></article></div><ul class="pager main-pager"><li class=next><a href=https://zalman0813.github.io/page/2/>Older Posts &rarr;</a></li></ul></div></div></div><div class=page-meta></div><footer class=post-footer><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><ul class="list-inline text-center footer-links"></ul><p class="credits copyright text-muted">&nbsp;&bull;&nbsp;&copy;
 2023
 &nbsp;&bull;&nbsp;
