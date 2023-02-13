@@ -3,7 +3,29 @@
 <span class=icon-bar></span>
 <span class=icon-bar></span>
 <span class=icon-bar></span></button>
-<a class=navbar-brand href=https://zalman0813.github.io>Pin Code Blog</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"></ul></div></div></nav><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=series-heading><h1>leetcode</h1><hr class=small></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-md-10 col-md-offset-1"><div class=posts-list><article class=post-preview><a href=https://zalman0813.github.io/posts/substring-with-concatenation-of-all-words/><h2 class=post-title>30. Substring With Concatenation of All Words</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on January 22, 2023
+<a class=navbar-brand href=https://zalman0813.github.io>Pin Code Blog</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"></ul></div></div></nav><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=series-heading><h1>leetcode</h1><hr class=small></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-md-10 col-md-offset-1"><div class=posts-list><article class=post-preview><a href=https://zalman0813.github.io/posts/kth-smallest-element-in-a-sorted-matrix/><h2 class=post-title>378. Kth Smallest Element in a Sorted Matrix</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on February 3, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/description/>https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/description/</a></p><p>Solution: K-way merge</p><p>Code:
+K-way merge</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Time Complexity: O(nlogn+(klogn))=O((n+k)logn)</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Space Complexity: O(n*n)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>kthSmallest</span>(self, matrix: List[List[int]], k: int) <span style=color:#f92672>-&gt;</span> int:
+</span></span><span style=display:flex><span>        <span style=color:#75715e># TODO: Write your code here</span>
+</span></span><span style=display:flex><span>        minHeap <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span>        <span style=color:#75715e># firstly, insert (first elemetn of list, index of fist element, list)</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> l <span style=color:#f92672>in</span> matrix:
+</span></span><span style=display:flex><span>            heappush(minHeap, (l[<span style=color:#ae81ff>0</span>], <span style=color:#ae81ff>0</span>, l))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> _ <span style=color:#f92672>in</span> range(k <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>):
+</span></span><span style=display:flex><span>            value, index, l <span style=color:#f92672>=</span> heappop(minHeap)
+</span></span><span style=display:flex><span>            index <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> index <span style=color:#f92672>&lt;</span> len(l):
+</span></span><span style=display:flex><span>                heappush(minHeap, (l[index], index, l))
+</span></span><span style=display:flex><span>        value, _, _ <span style=color:#f92672>=</span> heappop(minHeap)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> value
+</span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/k-way-merge/>K-way merge</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/substring-with-concatenation-of-all-words/><h2 class=post-title>30. Substring With Concatenation of All Words</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on January 22, 2023
 &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/substring-with-concatenation-of-all-words
 Solution: sliding windows
 Code:
@@ -107,13 +129,7 @@ Solution: dfs Code:
 # Time Complexity: O(n) # Space Complexity: O(n) # Definition for a binary tree node. # class TreeNode: # def __init__(self, val=0, left=None, right=None): # self.val = val # self.left = left # self.right = right from collections import deque class Solution: def rightSideView(self, root: Optional[TreeNode]) -> List[int]: if not root: return [] result = [] q = deque() q.append(root) while q: for i in range(len(q)): curNode = q.
 <a href=https://zalman0813.github.io/posts/binary-tree-right-side-view/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/binary-tree/>binary tree</a>&nbsp;
 <a href=https://zalman0813.github.io/tags/bfs/>bfs</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/binary-tree-maximum-path-sum/><h2 class=post-title>124. Binary Tree Maximum Path Sum</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on January 14, 2023
-&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/binary-tree-maximum-path-sum
-Solution: dfs Code:
-# Time Complexity: O(n) # Space Complexity: O(n) # Definition for a binary tree node. # class TreeNode: # def __init__(self, val=0, left=None, right=None): # self.val = val # self.left = left # self.right = right class Solution: def maxPathSum(self, root: Optional[TreeNode]) -> int: self.globalPathSum = -math.inf self.pathRecursive(root) return self.maxDiameter def pathRecursive(self, curNode): if not curNode: return 0 maxPathSumFromLeftNode = self.pathRecursive(curNode.left) maxPathSumFromRightNode = self.pathRecursive(curNode.right) # ignore paths with negative sums, since we need to find thhe maximum sum we should # ignore any path which has an overall negative sum.
-<a href=https://zalman0813.github.io/posts/binary-tree-maximum-path-sum/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/binary-tree/>binary tree</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/dfs/>dfs</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/hard/>hard</a>&nbsp;</div></article></div><ul class="pager main-pager"><li class=previous><a href=https://zalman0813.github.io/series/leetcode/page/1/>&larr; Newer Posts</a></li><li class=next><a href=https://zalman0813.github.io/series/leetcode/page/3/>Older Posts &rarr;</a></li></ul></div></div></div><footer class=post-footer><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><ul class="list-inline text-center footer-links"></ul><p class="credits copyright text-muted">&nbsp;&bull;&nbsp;&copy;
+<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;</div></article></div><ul class="pager main-pager"><li class=previous><a href=https://zalman0813.github.io/series/leetcode/page/1/>&larr; Newer Posts</a></li><li class=next><a href=https://zalman0813.github.io/series/leetcode/page/3/>Older Posts &rarr;</a></li></ul></div></div></div><footer class=post-footer><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><ul class="list-inline text-center footer-links"></ul><p class="credits copyright text-muted">&nbsp;&bull;&nbsp;&copy;
 2023
 &nbsp;&bull;&nbsp;
 <a href=https://zalman0813.github.io>Pin Code Blog</a></p><p class="credits theme-by text-muted"><a href=https://gohugo.io>Hugo v0.110.0</a> powered &nbsp;&bull;&nbsp; Theme <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> adapted from <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a></p></div></div></div></footer><script src=https://code.jquery.com/jquery-1.12.4.min.js integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin=anonymous></script>
