@@ -3,7 +3,16 @@
 <span class=icon-bar></span>
 <span class=icon-bar></span>
 <span class=icon-bar></span></button>
-<a class=navbar-brand href=https://zalman0813.github.io>Pin Code Blog</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"></ul></div></div></nav><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=page-heading><h1>Pin Code Blog</h1><hr class=small></div></div></div></div></div></header><div role=main class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=posts-list><article class=post-preview><a href=https://zalman0813.github.io/posts/reverse-linked-list/><h2 class=post-title>206. Reverse Linked List</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on November 23, 2022
+<a class=navbar-brand href=https://zalman0813.github.io>Pin Code Blog</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"></ul></div></div></nav><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=page-heading><h1>Pin Code Blog</h1><hr class=small></div></div></div></div></div></header><div role=main class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=posts-list><article class=post-preview><a href=https://zalman0813.github.io/posts/majority-element/><h2 class=post-title>169. Majority Element</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on November 24, 2022
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/majority-element/
+Status: done
+Solution: sorted, counting
+Code:
+sorted # Time Complexity: O(nlogn) # Space Complexity: O(1) class Solution: def majorityElement(self, nums: List[int]) -> int: nums.sort() # majority element that appears more than ⌊n / 2⌋ times, so mid will be the majority element. mid = len(nums) // 2 return nums[mid] counting # Time Complexity: O(n) # Space Complexity: O(1) class Solution: def majorityElement(self, nums: List[int]) -> int: res, counts = 0, 0 for n in nums: # When counts == 0, we initate res.
+<a href=https://zalman0813.github.io/posts/majority-element/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/sorted/>sorted</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/169/>169</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/easy/>easy</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/counting/>counting</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/reverse-linked-list/><h2 class=post-title>206. Reverse Linked List</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on November 23, 2022
 &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/reverse-linked-list/>https://leetcode.com/problems/reverse-linked-list/</a></p><p>Solution:
 linked-list</p><p>Code:
 linked-list</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Time Complexity: O(n)</span>
@@ -157,15 +166,7 @@ binary search # Time Complexity: O(LogN) # Space Complexity: O(1) class Solution
 <a href=https://zalman0813.github.io/tags/169/>169</a>&nbsp;
 <a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;
 <a href=https://zalman0813.github.io/tags/binay-search/>binay search</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/recursive/>recursive</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/flood-fill/><h2 class=post-title>733. Flood Fill</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on November 10, 2022
-&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/flood-fill/
-Solution: dfs
-Code:
-class Solution: def floodFill(self, image: List[List[int]], sr: int, sc: int, color: int) -> List[List[int]]: if image[sr][sc] == color: return image # keep original color to compare later orgColor = image[sr][sc] self.fill(image, sr, sc, orgColor, color) return image def fill(self, image, sr, sc, orgColor, color): # 1. skip if over matrix range # 2. skip if the color is not the same if ( sr &lt; 0 or sc &lt; 0 or sr >= len(image) or sc >= len(image[0]) or image[sr][sc] !
-<a href=https://zalman0813.github.io/posts/flood-fill/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/dfs/>dfs</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/matrix/>matrix</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/169/>169</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/easy/>easy</a>&nbsp;</div></article></div><ul class="pager main-pager"><li class=previous><a href=https://zalman0813.github.io/page/5/>&larr; Newer Posts</a></li><li class=next><a href=https://zalman0813.github.io/page/7/>Older Posts &rarr;</a></li></ul></div></div></div><div class=page-meta></div><footer class=post-footer><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><ul class="list-inline text-center footer-links"></ul><p class="credits copyright text-muted">&nbsp;&bull;&nbsp;&copy;
+<a href=https://zalman0813.github.io/tags/recursive/>recursive</a>&nbsp;</div></article></div><ul class="pager main-pager"><li class=previous><a href=https://zalman0813.github.io/page/5/>&larr; Newer Posts</a></li><li class=next><a href=https://zalman0813.github.io/page/7/>Older Posts &rarr;</a></li></ul></div></div></div><div class=page-meta></div><footer class=post-footer><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><ul class="list-inline text-center footer-links"></ul><p class="credits copyright text-muted">&nbsp;&bull;&nbsp;&copy;
 2023
 &nbsp;&bull;&nbsp;
 <a href=https://zalman0813.github.io>Pin Code Blog</a></p><p class="credits theme-by text-muted"><a href=https://gohugo.io>Hugo v0.111.1</a> powered &nbsp;&bull;&nbsp; Theme <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> adapted from <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a></p></div></div></div></footer><script src=https://code.jquery.com/jquery-1.12.4.min.js integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin=anonymous></script>
