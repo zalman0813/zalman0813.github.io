@@ -3,7 +3,65 @@
 <span class=icon-bar></span>
 <span class=icon-bar></span>
 <span class=icon-bar></span></button>
-<a class=navbar-brand href=https://zalman0813.github.io>Pin Code Blog</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"></ul></div></div></nav><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=tags-heading><h1>medium</h1><hr class=small></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-md-10 col-md-offset-1"><div class=posts-list><article class=post-preview><a href=https://zalman0813.github.io/posts/cutting-ribbons/><h2 class=post-title>1891. Cutting Ribbons</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 12, 2023
+<a class=navbar-brand href=https://zalman0813.github.io>Pin Code Blog</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"></ul></div></div></nav><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=tags-heading><h1>medium</h1><hr class=small></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-md-10 col-md-offset-1"><div class=posts-list><article class=post-preview><a href=https://zalman0813.github.io/posts/number-of-subsets/><h2 class=post-title>Number of Subsets</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 19, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href="https://www.codingninjas.com/codestudio/problems/number-of-subsets_3952532?source=youtube&amp;campaign=striver_dp_videos&amp;utm_source=youtube&amp;utm_medium=affiliate&amp;utm_campaign=striver_dp_videos">https://www.codingninjas.com/codestudio/problems/number-of-subsets_3952532?source=youtube&amp;campaign=striver_dp_videos&amp;utm_source=youtube&amp;utm_medium=affiliate&amp;utm_campaign=striver_dp_videos</a></p><p>Status: done</p><p>Solution: dp-bottom up</p><p>Code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e>#Time Complexity: O(n*s), where s is the target sum</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#Space Complexity: O(n*s)</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> os <span style=color:#f92672>import</span> <span style=color:#f92672>*</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> sys <span style=color:#f92672>import</span> <span style=color:#f92672>*</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> collections <span style=color:#f92672>import</span> <span style=color:#f92672>*</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> math <span style=color:#f92672>import</span> <span style=color:#f92672>*</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> typing <span style=color:#f92672>import</span> List
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>findWays</span>(nums: List[int], target_sum: int) <span style=color:#f92672>-&gt;</span> int:
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Replace this placeholder return statement with your code</span>
+</span></span><span style=display:flex><span>    tot <span style=color:#f92672>=</span> sum(nums)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> tot <span style=color:#f92672>&lt;</span> target_sum:
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>    dp <span style=color:#f92672>=</span> [ [<span style=color:#ae81ff>0</span> <span style=color:#66d9ef>for</span> j <span style=color:#f92672>in</span> range(target_sum<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>)] <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(len(nums))]
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Base case 1</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> nums[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:
+</span></span><span style=display:flex><span>        dp[<span style=color:#ae81ff>0</span>][<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Base case 2</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>else</span>: 
+</span></span><span style=display:flex><span>        dp[<span style=color:#ae81ff>0</span>][<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> nums[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>&lt;=</span> target_sum:
+</span></span><span style=display:flex><span>            dp[<span style=color:#ae81ff>0</span>][nums[<span style=color:#ae81ff>0</span>]] <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>1</span>, len(dp)):
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> required_sum <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>0</span>, len(dp[<span style=color:#ae81ff>0</span>])):
+</span></span><span style=display:flex><span>            sum1 <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> nums[i] <span style=color:#f92672>&lt;=</span> required_sum:
+</span></span><span style=display:flex><span>                sum1 <span style=color:#f92672>=</span> dp[i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][required_sum <span style=color:#f92672>-</span> nums[i]]
+</span></span><span style=display:flex><span>            sum2 <span style=color:#f92672>=</span> dp[i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][required_sum]
+</span></span><span style=display:flex><span>            dp[i][required_sum] <span style=color:#f92672>=</span> sum1 <span style=color:#f92672>+</span> sum2
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> dp[len(nums)<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][target_sum]
+</span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/dp/>dp</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/count-square-submatrices-with-all-ones/><h2 class=post-title>1277. Count Square Submatrices With All Ones</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 19, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/count-square-submatrices-with-all-ones/description/>https://leetcode.com/problems/count-square-submatrices-with-all-ones/description/</a></p><p>Status: done</p><p>Solution: dp-bottom up</p><p>Code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e>#Time Complexity: O(n*m)</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#Space Complexity: O(n*m)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>countSquares</span>(self, nums: List[List[int]]) <span style=color:#f92672>-&gt;</span> int:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        rows <span style=color:#f92672>=</span> len(nums)
+</span></span><span style=display:flex><span>        cols <span style=color:#f92672>=</span> len(nums[<span style=color:#ae81ff>0</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        dp <span style=color:#f92672>=</span> [ [<span style=color:#ae81ff>0</span>]<span style=color:#f92672>*</span>cols <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(rows) ]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(rows):
+</span></span><span style=display:flex><span>            dp[i][<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> nums[i][<span style=color:#ae81ff>0</span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> j <span style=color:#f92672>in</span> range(cols):
+</span></span><span style=display:flex><span>            dp[<span style=color:#ae81ff>0</span>][j] <span style=color:#f92672>=</span> nums[<span style=color:#ae81ff>0</span>][j]
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>1</span>, rows):
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>for</span> j <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>1</span>, cols):
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>if</span> nums[i][j] <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:
+</span></span><span style=display:flex><span>                    <span style=color:#66d9ef>continue</span>
+</span></span><span style=display:flex><span>                dp[i][j] <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span> <span style=color:#f92672>+</span> min(dp[i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][j], dp[i][j<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>], dp[i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][j<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>])
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> sum([sum(row) <span style=color:#66d9ef>for</span> row <span style=color:#f92672>in</span> dp])
+</span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/dp/>dp</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/cutting-ribbons/><h2 class=post-title>1891. Cutting Ribbons</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 12, 2023
 &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/cutting-ribbons/
 Status: done
 Solution: dp-bottom up
@@ -117,48 +175,6 @@ Code:
 </span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> end <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:
 </span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>True</span>
 </span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>False</span>
-</span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/greedy/>greedy</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/boats-to-save-people/><h2 class=post-title>881. Boats to Save People</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on February 26, 2023
-&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/boats-to-save-people/description/>https://leetcode.com/problems/boats-to-save-people/description/</a></p><p>Solution: greedy</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Time Complexity: O(nlogn)</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Space Complexity: O(n), n represents the memory required to sort this array.</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>numRescueBoats</span>(self, people: List[int], limit: int) <span style=color:#f92672>-&gt;</span> int:
-</span></span><span style=display:flex><span>        people<span style=color:#f92672>.</span>sort()
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>        l <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
-</span></span><span style=display:flex><span>        r <span style=color:#f92672>=</span> len(people) <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>        boats <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>while</span> l <span style=color:#f92672>&lt;=</span> r:
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> people[l] <span style=color:#f92672>+</span> people[r] <span style=color:#f92672>&lt;=</span> limit:
-</span></span><span style=display:flex><span>                l <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>            r <span style=color:#f92672>-=</span> <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>            boats <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> boats
-</span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/greedy/>greedy</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/sorted/>sorted</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/gas-station/><h2 class=post-title>134. Gas Station</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on February 26, 2023
-&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/gas-station/>https://leetcode.com/problems/gas-station/</a></p><p>Solution: greedy</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Time Complexity: O(n)</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Space Complexity: O(1)</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>canCompleteCircuit</span>(self, gas: List[int], cost: List[int]) <span style=color:#f92672>-&gt;</span> int:
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> sum(gas) <span style=color:#f92672>&lt;</span> sum(cost):
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>        start <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
-</span></span><span style=display:flex><span>        total <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(len(gas)):
-</span></span><span style=display:flex><span>            total <span style=color:#f92672>+=</span> gas[i] <span style=color:#f92672>-</span> cost[i]
-</span></span><span style=display:flex><span>            
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> total <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>:
-</span></span><span style=display:flex><span>                start <span style=color:#f92672>=</span> i <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>                total <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> start
 </span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/greedy/>greedy</a>&nbsp;
 <a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;</div></article></div><ul class="pager main-pager"><li class=next><a href=https://zalman0813.github.io/tags/medium/page/2/>Older Posts &rarr;</a></li></ul></div></div></div><footer class=post-footer><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><ul class="list-inline text-center footer-links"></ul><p class="credits copyright text-muted">&nbsp;&bull;&nbsp;&copy;
 2023

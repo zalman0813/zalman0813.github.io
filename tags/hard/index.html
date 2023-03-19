@@ -3,7 +3,65 @@
 <span class=icon-bar></span>
 <span class=icon-bar></span>
 <span class=icon-bar></span></button>
-<a class=navbar-brand href=https://zalman0813.github.io>Pin Code Blog</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"></ul></div></div></nav><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=tags-heading><h1>hard</h1><hr class=small></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-md-10 col-md-offset-1"><div class=posts-list><article class=post-preview><a href=https://zalman0813.github.io/posts/n-queens/><h2 class=post-title>51. N Queens</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 5, 2023
+<a class=navbar-brand href=https://zalman0813.github.io>Pin Code Blog</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"></ul></div></div></nav><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=tags-heading><h1>hard</h1><hr class=small></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-md-10 col-md-offset-1"><div class=posts-list><article class=post-preview><a href=https://zalman0813.github.io/posts/partition-a-set-into-two-subsets-such-that-the-difference-of-subset-sums-is-minimum/><h2 class=post-title>Partition a Set Into Two Subsets Such That the Difference of Subset Sums Is Minimum</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 19, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href="https://www.codingninjas.com/codestudio/problems/partition-a-set-into-two-subsets-such-that-the-difference-of-subset-sums-is-minimum_842494?leftPanelTab=0">https://www.codingninjas.com/codestudio/problems/partition-a-set-into-two-subsets-such-that-the-difference-of-subset-sums-is-minimum_842494?leftPanelTab=0</a></p><p>Status: done</p><p>Solution: dp-top down</p><p>Code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e>#Time Complexity: O(n*s), where s is the target sum</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#Space Complexity: O(n*s)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>minSubsetSumDifference</span>(nums, n):
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Write your code here.</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Return the minimum difference in the form of an integer.</span>
+</span></span><span style=display:flex><span>    dp <span style=color:#f92672>=</span> [[<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span> <span style=color:#66d9ef>for</span> _ <span style=color:#f92672>in</span> range(sum(nums)<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>)] <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(len(nums))]
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> rec(nums,<span style=color:#ae81ff>0</span>,  <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, dp)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>rec</span>(nums, i, sum1, sum2, dp):
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> i <span style=color:#f92672>==</span> len(nums):
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> abs(sum1 <span style=color:#f92672>-</span> sum2)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> dp[i][sum1] <span style=color:#f92672>==</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        dp[i][sum1] <span style=color:#f92672>=</span> min(
+</span></span><span style=display:flex><span>            rec(
+</span></span><span style=display:flex><span>                nums, i <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>, sum1 <span style=color:#f92672>+</span> nums[i], sum2, dp
+</span></span><span style=display:flex><span>            ),
+</span></span><span style=display:flex><span>            rec(
+</span></span><span style=display:flex><span>                nums, i <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>, sum1, sum2 <span style=color:#f92672>+</span> nums[i], dp
+</span></span><span style=display:flex><span>            ),
+</span></span><span style=display:flex><span>        )
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> dp[i][sum1]
+</span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/hard/>hard</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/dp/>dp</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/minimum-number-of-refueling-stops/><h2 class=post-title>871. Minimum Number of Refueling Stops</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 19, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/minimum-number-of-refueling-stops/description/>https://leetcode.com/problems/minimum-number-of-refueling-stops/description/</a></p><p>Status: done</p><p>Solution: dp-bottom up</p><p>Code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e>#Time Complexity: O(n^2)</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#Space Complexity: O(n^2)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>minRefuelStops</span>(self, target: int, startFuel: int, stations: List[List[int]]) <span style=color:#f92672>-&gt;</span> int:
+</span></span><span style=display:flex><span>        n <span style=color:#f92672>=</span> len(stations)
+</span></span><span style=display:flex><span>        dp <span style=color:#f92672>=</span> [ [<span style=color:#ae81ff>0</span>]<span style=color:#f92672>*</span>(n<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>) <span style=color:#66d9ef>for</span> _ <span style=color:#f92672>in</span> range(n<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>) ]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>while</span> i <span style=color:#f92672>&lt;=</span> n:
+</span></span><span style=display:flex><span>            dp[i][<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> startFuel
+</span></span><span style=display:flex><span>            i <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>while</span> i <span style=color:#f92672>&lt;=</span> n:
+</span></span><span style=display:flex><span>            j <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>while</span> j <span style=color:#f92672>&lt;=</span> i:
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>if</span> dp[i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][j<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>&gt;=</span> stations[i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][<span style=color:#ae81ff>0</span>]:
+</span></span><span style=display:flex><span>                    dp[i][j] <span style=color:#f92672>=</span> max(dp[i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][j], dp[i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][j<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>+</span> stations[i <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>][<span style=color:#ae81ff>1</span>])
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>                    dp[i][j] <span style=color:#f92672>=</span> dp[i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][j]
+</span></span><span style=display:flex><span>                j <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>            i <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>        i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>while</span> (i <span style=color:#f92672>&lt;=</span> n):
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> dp[n][i] <span style=color:#f92672>&gt;=</span> target:
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>return</span> i
+</span></span><span style=display:flex><span>            i <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>
+</span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/hard/>hard</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/dp/>dp</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/n-queens/><h2 class=post-title>51. N Queens</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 5, 2023
 &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/n-queens/
 Status: done
 Solution: backtracking
@@ -112,35 +170,7 @@ Solution: dfs Code:
 # Time Complexity: O(n) # Space Complexity: O(n) # Definition for a binary tree node. # class TreeNode: # def __init__(self, val=0, left=None, right=None): # self.val = val # self.left = left # self.right = right class Solution: def maxPathSum(self, root: Optional[TreeNode]) -> int: self.globalPathSum = -math.inf self.pathRecursive(root) return self.maxDiameter def pathRecursive(self, curNode): if not curNode: return 0 maxPathSumFromLeftNode = self.pathRecursive(curNode.left) maxPathSumFromRightNode = self.pathRecursive(curNode.right) # ignore paths with negative sums, since we need to find thhe maximum sum we should # ignore any path which has an overall negative sum.
 <a href=https://zalman0813.github.io/posts/binary-tree-maximum-path-sum/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/binary-tree/>binary tree</a>&nbsp;
 <a href=https://zalman0813.github.io/tags/dfs/>dfs</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/hard/>hard</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/reverse-nodes-in-k-group/><h2 class=post-title>25. Reverse Nodes in K Group</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on January 8, 2023
-&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/reverse-nodes-in-k-group
-Solution: linked-list
-Code: in-place reverse
-# Time Complexity: O(n) # Space Complexity: O(1) # Definition for singly-linked list. # class ListNode: # def __init__(self, val=0, next=None): # self.val = val # self.next = next class Solution: def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]: if k &lt;= 1 or head is None: return head prev, cur = None, head while cur: last_node_of_last_part, last_node_of_cur_group = prev, cur #check if rest of nodes is less than k.
-<a href=https://zalman0813.github.io/posts/reverse-nodes-in-k-group/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/linked-list/>linked list</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/in-place-reverse/>in-place reverse</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/hard/>hard</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/first-missing-positive/><h2 class=post-title>42. First Missing Positive</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on January 7, 2023
-&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/first-missing-positive>https://leetcode.com/problems/first-missing-positive</a></p><p>Solution: cyclic sort</p><p>Code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Time Complexity: O(n)</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Space Complexity: O(1)</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>firstMissingPositive</span>(self, nums: List[int]) <span style=color:#f92672>-&gt;</span> int:
-</span></span><span style=display:flex><span>        i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
-</span></span><span style=display:flex><span>        n <span style=color:#f92672>=</span> len(nums)
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>while</span> i <span style=color:#f92672>&lt;</span> n:
-</span></span><span style=display:flex><span>            j <span style=color:#f92672>=</span> nums[i] <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> nums[i] <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>0</span> <span style=color:#f92672>and</span> nums[i] <span style=color:#f92672>&lt;=</span> n <span style=color:#f92672>and</span> nums[i] <span style=color:#f92672>!=</span> nums[j]:
-</span></span><span style=display:flex><span>                nums[i], nums[j] <span style=color:#f92672>=</span> nums[j], nums[i]
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>else</span>:
-</span></span><span style=display:flex><span>                i <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(n):
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> nums[i] <span style=color:#f92672>!=</span> i <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>:
-</span></span><span style=display:flex><span>                <span style=color:#66d9ef>return</span> i <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>        <span style=color:#75715e># if missing number is over n, it&#39;s as n + 1</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> n <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>
-</span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/cyclic-sort/>cyclic sort</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/hard/>hard</a>&nbsp;</div></article></div></div></div></div><footer class=post-footer><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><ul class="list-inline text-center footer-links"></ul><p class="credits copyright text-muted">&nbsp;&bull;&nbsp;&copy;
+<a href=https://zalman0813.github.io/tags/hard/>hard</a>&nbsp;</div></article></div><ul class="pager main-pager"><li class=next><a href=https://zalman0813.github.io/tags/hard/page/2/>Older Posts &rarr;</a></li></ul></div></div></div><footer class=post-footer><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><ul class="list-inline text-center footer-links"></ul><p class="credits copyright text-muted">&nbsp;&bull;&nbsp;&copy;
 2023
 &nbsp;&bull;&nbsp;
 <a href=https://zalman0813.github.io>Pin Code Blog</a></p><p class="credits theme-by text-muted"><a href=https://gohugo.io>Hugo v0.111.3</a> powered &nbsp;&bull;&nbsp; Theme <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> adapted from <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a></p></div></div></div></footer><script src=https://code.jquery.com/jquery-1.12.4.min.js integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin=anonymous></script>

@@ -3,7 +3,49 @@
 <span class=icon-bar></span>
 <span class=icon-bar></span>
 <span class=icon-bar></span></button>
-<a class=navbar-brand href=https://zalman0813.github.io>Pin Code Blog</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"></ul></div></div></nav><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=tags-heading><h1>medium</h1><hr class=small></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-md-10 col-md-offset-1"><div class=posts-list><article class=post-preview><a href=https://zalman0813.github.io/posts/two-city-scheduling/><h2 class=post-title>1029. Two City Scheduling</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on February 26, 2023
+<a class=navbar-brand href=https://zalman0813.github.io>Pin Code Blog</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"></ul></div></div></nav><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=tags-heading><h1>medium</h1><hr class=small></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-md-10 col-md-offset-1"><div class=posts-list><article class=post-preview><a href=https://zalman0813.github.io/posts/boats-to-save-people/><h2 class=post-title>881. Boats to Save People</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on February 26, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/boats-to-save-people/description/>https://leetcode.com/problems/boats-to-save-people/description/</a></p><p>Solution: greedy</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Time Complexity: O(nlogn)</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Space Complexity: O(n), n represents the memory required to sort this array.</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>numRescueBoats</span>(self, people: List[int], limit: int) <span style=color:#f92672>-&gt;</span> int:
+</span></span><span style=display:flex><span>        people<span style=color:#f92672>.</span>sort()
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        l <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>        r <span style=color:#f92672>=</span> len(people) <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        boats <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>while</span> l <span style=color:#f92672>&lt;=</span> r:
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> people[l] <span style=color:#f92672>+</span> people[r] <span style=color:#f92672>&lt;=</span> limit:
+</span></span><span style=display:flex><span>                l <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>            r <span style=color:#f92672>-=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>            boats <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> boats
+</span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/greedy/>greedy</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/sorted/>sorted</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/gas-station/><h2 class=post-title>134. Gas Station</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on February 26, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/gas-station/>https://leetcode.com/problems/gas-station/</a></p><p>Solution: greedy</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Time Complexity: O(n)</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Space Complexity: O(1)</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>canCompleteCircuit</span>(self, gas: List[int], cost: List[int]) <span style=color:#f92672>-&gt;</span> int:
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> sum(gas) <span style=color:#f92672>&lt;</span> sum(cost):
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>        start <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>        total <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(len(gas)):
+</span></span><span style=display:flex><span>            total <span style=color:#f92672>+=</span> gas[i] <span style=color:#f92672>-</span> cost[i]
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> total <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>:
+</span></span><span style=display:flex><span>                start <span style=color:#f92672>=</span> i <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>                total <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> start
+</span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/greedy/>greedy</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/two-city-scheduling/><h2 class=post-title>1029. Two City Scheduling</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on February 26, 2023
 &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/two-city-scheduling/>https://leetcode.com/problems/two-city-scheduling/</a></p><p>Solution: greedy</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e># Time Complexity: O(nlogn)</span>
 </span></span><span style=display:flex><span><span style=color:#75715e># Space Complexity: O(m + n), m represents the memory required to sort this array.</span>
@@ -178,42 +220,6 @@ top k elements</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;backg
 </span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> [ num <span style=color:#66d9ef>for</span> count, num <span style=color:#f92672>in</span> minHeap ]
 </span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/top-k-elements/>top K elements</a>&nbsp;
 <a href=https://zalman0813.github.io/tags/minheap/>minHeap</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/k-closest-points-to-origin/><h2 class=post-title>973. K Closest Points to Origin</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on February 12, 2023
-&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/k-closest-points-to-origin/description/>https://leetcode.com/problems/k-closest-points-to-origin/description/</a></p><p>Solution: top k elements
-Code:
-top k elements</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Time Complexity: O(nlogk)</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Space Complexity: O(k)</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>import</span> heapq
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>kClosest</span>(self, points: List[List[int]], K: int) <span style=color:#f92672>-&gt;</span> List[List[int]]:
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>        maxHeap <span style=color:#f92672>=</span> []
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> (x, y) <span style=color:#f92672>in</span> points:
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> len(maxHeap) <span style=color:#f92672>==</span> K:
-</span></span><span style=display:flex><span>                head_x <span style=color:#f92672>=</span> maxHeap[<span style=color:#ae81ff>0</span>][<span style=color:#ae81ff>1</span>][<span style=color:#ae81ff>0</span>]
-</span></span><span style=display:flex><span>                head_y <span style=color:#f92672>=</span> maxHeap[<span style=color:#ae81ff>0</span>][<span style=color:#ae81ff>1</span>][<span style=color:#ae81ff>1</span>]
-</span></span><span style=display:flex><span>                <span style=color:#66d9ef>if</span> self<span style=color:#f92672>.</span>distance(x, y) <span style=color:#f92672>&lt;</span> self<span style=color:#f92672>.</span>distance(head_x, head_y):
-</span></span><span style=display:flex><span>                    heapq<span style=color:#f92672>.</span>heappop(maxHeap)
-</span></span><span style=display:flex><span>                    heapq<span style=color:#f92672>.</span>heappush(maxHeap, [<span style=color:#f92672>-</span>self<span style=color:#f92672>.</span>distance(x, y), (x, y)])
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>else</span>:
-</span></span><span style=display:flex><span>                heapq<span style=color:#f92672>.</span>heappush(maxHeap, [<span style=color:#f92672>-</span>self<span style=color:#f92672>.</span>distance(x, y), (x, y)])
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> [[point[<span style=color:#ae81ff>0</span>], point[<span style=color:#ae81ff>1</span>]] <span style=color:#66d9ef>for</span> dist, point <span style=color:#f92672>in</span> maxHeap]
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>distance</span>(self, x, y):
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> (x<span style=color:#f92672>*</span>x <span style=color:#f92672>+</span> y<span style=color:#f92672>*</span>y)
-</span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/top-k-elements/>top K elements</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/maxheap/>maxHeap</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/reorganize-string/><h2 class=post-title>767. Reorganize String</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on February 12, 2023
-&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/reorganize-string/
-Solution: top k elements
-Code:
-# Time Complexity: O(nlogc). Due to c bounded by the size of the alphabet, space is O(n). # Space Complexity: O(c). Due to c bounded by the size of the alphabet, space is O(1). from collections import Counter import heapq class Solution: def reorganizeString(self, s: str) -> str: char_counter = Counter(s) most_freq_chars = [] for char, freq in char_counter.items(): heapq.heappush(most_freq_chars, [-freq, char]) result = "" previous = None while len(most_freq_chars) > 0: count, char = heapq.
-<a href=https://zalman0813.github.io/posts/reorganize-string/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/top-k-elements/>top k elements</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/maxheap/>maxheap</a>&nbsp;
 <a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;</div></article></div><ul class="pager main-pager"><li class=previous><a href=https://zalman0813.github.io/tags/medium/page/1/>&larr; Newer Posts</a></li><li class=next><a href=https://zalman0813.github.io/tags/medium/page/3/>Older Posts &rarr;</a></li></ul></div></div></div><footer class=post-footer><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><ul class="list-inline text-center footer-links"></ul><p class="credits copyright text-muted">&nbsp;&bull;&nbsp;&copy;
 2023
 &nbsp;&bull;&nbsp;
