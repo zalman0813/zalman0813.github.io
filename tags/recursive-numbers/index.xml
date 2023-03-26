@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>recursive numbers on Pin Code Blog</title><link>https://zalman0813.github.io/tags/recursive-numbers/</link><description>Recent content in recursive numbers on Pin Code Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 26 Mar 2023 09:19:39 +0800</lastBuildDate><atom:link href="https://zalman0813.github.io/tags/recursive-numbers/index.xml" rel="self" type="application/rss+xml"/><item><title>198. House Robber</title><link>https://zalman0813.github.io/posts/house-robber/</link><pubDate>Sun, 26 Mar 2023 09:19:39 +0800</pubDate><guid>https://zalman0813.github.io/posts/house-robber/</guid><description>Link: https://leetcode.com/problems/fibonacci-number
+Status: done
+Solution: dp-bottom up
+Code:
+#Time Complexity: O(n) #Space Complexity: O(1) class Solution: def rob(self, nums: List[int]) -&amp;gt; int: rob1, rob2 = 0, 0 #[rob1, rob2, n, n+1, ...] for n in nums: temp = max(n + rob1, rob2) rob1 = rob2 rob2 = temp return rob2 #Time Complexity: O(n) #Space Complexity: O(1) class Solution: def rob(self, nums: List[int]) -&amp;gt; int: rob1, rob2 = 0, 0 #[rob1, rob2, n, n+1, .</description></item><item><title>1137. N Th Tribonacci Number</title><link>https://zalman0813.github.io/posts/n-th-tribonacci-number/</link><pubDate>Sun, 26 Mar 2023 08:29:59 +0800</pubDate><guid>https://zalman0813.github.io/posts/n-th-tribonacci-number/</guid><description>Link: https://leetcode.com/problems/n-th-tribonacci-number/description/
+Status: done
+Solution: dp-bottom up
+Code:
+#Time Complexity: O(n) #Space Complexity: O(1) class Solution: def tribonacci(self, n: int) -&amp;gt; int: if n == 0: return 0 if n &amp;lt;= 2: return 1 tn0 = 0 tn1 = 1 tn2 = 1 for i in range(3, n+1): tmp = tn0 + tn1 +tn2 tn0 = tn1 tn1 = tn2 tn2 = tmp return tmp</description></item><item><title>Unique Paths</title><link>https://zalman0813.github.io/posts/unique-paths/</link><pubDate>Sat, 25 Mar 2023 18:24:21 +0800</pubDate><guid>https://zalman0813.github.io/posts/unique-paths/</guid><description>Link: https://leetcode.com/problems/fibonacci-number
+Status: done
+Solution: dp-bottom up
+Code:
+#Time Complexity: O(m*n) #Space Complexity: O(m) class Solution: def uniquePaths(self, m: int, n: int) -&amp;gt; int: col = [1]*m for i in range(n-1): newCol = [1]*m for j in range(m - 2, -1, -1): newCol[j] = newCol[j+1] + col[j] col = newCol return col[0]</description></item><item><title>509. Fibonacci Number</title><link>https://zalman0813.github.io/posts/fibonacci-number/</link><pubDate>Sat, 25 Mar 2023 16:53:42 +0800</pubDate><guid>https://zalman0813.github.io/posts/fibonacci-number/</guid><description>Link: https://leetcode.com/problems/fibonacci-number
+Status: done
+Solution: dp-bottom up
+Code:
+#Time Complexity: O(n) #Space Complexity: O(n) class Solution: def fib(self, n: int) -&amp;gt; int: if n == 0: return 0 if n == 1: return 1 dp = [0] * (n + 1) dp[0] = 0 dp[1] = 1 for i in range(2, n+1): dp[i] = dp[i-1] + dp[i-2] return dp[n] #Time Complexity: O(n) #Space Complexity: O(1) class Solution: def fib(self, n: int) -&amp;gt; int: if n == 0: return 0 if n == 1: return 1 prev_2 = 0 prev_1 = 1 for i in range(2, n+1): tmp = prev_1 + prev_2 prev_2 = prev_1 prev_1 = tmp return prev_1</description></item></channel></rss>
