@@ -1,5 +1,5 @@
 ---
-title: "Unique Paths"
+title: "62. Unique Paths"
 date: 2023-03-25T18:24:21+08:00
 draft: false
 tags: ["medium", "dp", "recursive numbers"]
@@ -7,7 +7,7 @@ series: ["leetcode"]
 categories: ["coding"]
 ---
 
-Link: https://leetcode.com/problems/fibonacci-number
+Link: https://leetcode.com/problems/unique-paths/
 
 Status: done
 
