@@ -110,11 +110,10 @@
 </span></span><span style=display:flex><span>        dp <span style=color:#f92672>=</span> [<span style=color:#ae81ff>0</span>] <span style=color:#f92672>*</span> (amount <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>)
 </span></span><span style=display:flex><span>        dp[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>        
 </span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> coin <span style=color:#f92672>in</span> coins:
 </span></span><span style=display:flex><span>            <span style=color:#66d9ef>for</span> amt <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>1</span>, amount <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>):
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> amt <span style=color:#f92672>&gt;=</span> coin:
-</span></span><span style=display:flex><span>                dp[amt] <span style=color:#f92672>+=</span> dp[amt <span style=color:#f92672>-</span> coin]
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>if</span> amt <span style=color:#f92672>&gt;=</span> coin:
+</span></span><span style=display:flex><span>                    dp[amt] <span style=color:#f92672>+=</span> dp[amt <span style=color:#f92672>-</span> coin]
 </span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> dp[amount]
 </span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;
 <a href=https://zalman0813.github.io/tags/dp/>dp</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/number-of-subsets/><h2 class=post-title>Number of Subsets</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 19, 2023

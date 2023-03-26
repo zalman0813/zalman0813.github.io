@@ -41,11 +41,10 @@ Code:
 </span></span><span style=display:flex><span>        dp <span style=color:#f92672>=</span> [<span style=color:#ae81ff>0</span>] <span style=color:#f92672>*</span> (amount <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>)
 </span></span><span style=display:flex><span>        dp[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>        
 </span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> coin <span style=color:#f92672>in</span> coins:
 </span></span><span style=display:flex><span>            <span style=color:#66d9ef>for</span> amt <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>1</span>, amount <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>):
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> amt <span style=color:#f92672>&gt;=</span> coin:
-</span></span><span style=display:flex><span>                dp[amt] <span style=color:#f92672>+=</span> dp[amt <span style=color:#f92672>-</span> coin]
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>if</span> amt <span style=color:#f92672>&gt;=</span> coin:
+</span></span><span style=display:flex><span>                    dp[amt] <span style=color:#f92672>+=</span> dp[amt <span style=color:#f92672>-</span> coin]
 </span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> dp[amount]
 </span></span></code></pre></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;
 <a href=https://zalman0813.github.io/tags/dp/>dp</a>&nbsp;</div></article><ul class="pager blog-pager"><li class=previous><a href=https://zalman0813.github.io/posts/partition-a-set-into-two-subsets-such-that-the-difference-of-subset-sums-is-minimum/ data-toggle=tooltip data-placement=top title="Partition a Set Into Two Subsets Such That the Difference of Subset Sums Is Minimum">&larr; Previous Post</a></li><li class=next><a href=https://zalman0813.github.io/posts/fibonacci-number/ data-toggle=tooltip data-placement=top title="509. Fibonacci Number">Next Post &rarr;</a></li></ul></div></div></div><footer class=post-footer><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><ul class="list-inline text-center footer-links"></ul><p class="credits copyright text-muted">&nbsp;&bull;&nbsp;&copy;
