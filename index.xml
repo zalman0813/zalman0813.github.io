@@ -6,7 +6,7 @@ Code:
 Status: done
 Solution: dp-bottom up
 Code:
-#Time Complexity: O(n) #Space Complexity: O(1) class Solution: def tribonacci(self, n: int) -&amp;gt; int: if n == 0: return 0 if n &amp;lt;= 2: return 1 tn0 = 0 tn1 = 1 tn2 = 1 for i in range(3, n+1): tmp = tn0 + tn1 +tn2 tn0 = tn1 tn1 = tn2 tn2 = tmp return tmp</description></item><item><title>Unique Paths</title><link>https://zalman0813.github.io/posts/unique-paths/</link><pubDate>Sat, 25 Mar 2023 18:24:21 +0800</pubDate><guid>https://zalman0813.github.io/posts/unique-paths/</guid><description>Link: https://leetcode.com/problems/fibonacci-number
+#Time Complexity: O(n) #Space Complexity: O(1) class Solution: def tribonacci(self, n: int) -&amp;gt; int: if n == 0: return 0 if n &amp;lt;= 2: return 1 tn0 = 0 tn1 = 1 tn2 = 1 for i in range(3, n+1): tmp = tn0 + tn1 +tn2 tn0 = tn1 tn1 = tn2 tn2 = tmp return tmp</description></item><item><title>62. Unique Paths</title><link>https://zalman0813.github.io/posts/unique-paths/</link><pubDate>Sat, 25 Mar 2023 18:24:21 +0800</pubDate><guid>https://zalman0813.github.io/posts/unique-paths/</guid><description>Link: https://leetcode.com/problems/unique-paths/
 Status: done
 Solution: dp-bottom up
 Code:
