@@ -4,12 +4,36 @@
 <span class=icon-bar></span>
 <span class=icon-bar></span></button>
 <a class=navbar-brand href=https://zalman0813.github.io>Pin Code Blog</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"></ul></div></div></nav><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=categories-heading><h1>coding</h1><hr class=small></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-md-10 col-md-offset-1"><div class=posts-list><article class=post-preview><a href=https://zalman0813.github.io/posts/house-robber/><h2 class=post-title>198. House Robber</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 26, 2023
-&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/fibonacci-number
-Status: done
-Solution: dp-bottom up
-Code:
-#Time Complexity: O(n) #Space Complexity: O(1) class Solution: def rob(self, nums: List[int]) -> int: rob1, rob2 = 0, 0 #[rob1, rob2, n, n+1, ...] for n in nums: temp = max(n + rob1, rob2) rob1 = rob2 rob2 = temp return rob2 #Time Complexity: O(n) #Space Complexity: O(1) class Solution: def rob(self, nums: List[int]) -> int: rob1, rob2 = 0, 0 #[rob1, rob2, n, n+1, .
-<a href=https://zalman0813.github.io/posts/house-robber/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/house-robber/>https://leetcode.com/problems/house-robber/</a></p><p>Status: done</p><p>Solution: dp-bottom up</p><p>Code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e>#Time Complexity: O(n)</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#Space Complexity: O(1)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>rob</span>(self, nums: List[int]) <span style=color:#f92672>-&gt;</span> int:
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        rob1, rob2 <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e>#[rob1, rob2, n, n+1, ...]</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> n <span style=color:#f92672>in</span> nums:
+</span></span><span style=display:flex><span>            temp <span style=color:#f92672>=</span> max(n <span style=color:#f92672>+</span> rob1, rob2)
+</span></span><span style=display:flex><span>            rob1 <span style=color:#f92672>=</span> rob2
+</span></span><span style=display:flex><span>            rob2 <span style=color:#f92672>=</span> temp
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> rob2
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># top-down by recursive, which will be timeout</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#Time Complexity: O(n)</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#Space Complexity: O(n)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>rob</span>(self, nums: List[int]) <span style=color:#f92672>-&gt;</span> int:
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        dp <span style=color:#f92672>=</span> [<span style=color:#ae81ff>0</span>]<span style=color:#f92672>*</span>len(nums)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>helper</span>(i, nums, dp):
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> i <span style=color:#f92672>&gt;=</span> len(nums):
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> dp[i] <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:
+</span></span><span style=display:flex><span>                rob <span style=color:#f92672>=</span> helper(i<span style=color:#f92672>+</span><span style=color:#ae81ff>2</span>, nums, dp) <span style=color:#f92672>+</span> nums[i]
+</span></span><span style=display:flex><span>                not_rob <span style=color:#f92672>=</span> helper(i<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>, nums, dp)
+</span></span><span style=display:flex><span>                dp[i] <span style=color:#f92672>=</span> max(rob, not_rob)
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> dp[i]
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> helper(<span style=color:#ae81ff>0</span>, nums, dp)
+</span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;
 <a href=https://zalman0813.github.io/tags/dp/>dp</a>&nbsp;
 <a href=https://zalman0813.github.io/tags/recursive-numbers/>recursive numbers</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/n-th-tribonacci-number/><h2 class=post-title>1137. N Th Tribonacci Number</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 26, 2023
 &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/n-th-tribonacci-number/description/>https://leetcode.com/problems/n-th-tribonacci-number/description/</a></p><p>Status: done</p><p>Solution: dp-bottom up</p><p>Code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e>#Time Complexity: O(n)</span>
