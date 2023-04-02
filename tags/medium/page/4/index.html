@@ -3,7 +3,56 @@
 <span class=icon-bar></span>
 <span class=icon-bar></span>
 <span class=icon-bar></span></button>
-<a class=navbar-brand href=https://zalman0813.github.io>Pin Code Blog</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"></ul></div></div></nav><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=tags-heading><h1>medium</h1><hr class=small></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-md-10 col-md-offset-1"><div class=posts-list><article class=post-preview><a href=https://zalman0813.github.io/posts/binary-tree-right-side-view/><h2 class=post-title>199. Binary Tree Right Side View</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on January 14, 2023
+<a class=navbar-brand href=https://zalman0813.github.io>Pin Code Blog</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"></ul></div></div></nav><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=tags-heading><h1>medium</h1><hr class=small></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-md-10 col-md-offset-1"><div class=posts-list><article class=post-preview><a href=https://zalman0813.github.io/posts/reorganize-string/><h2 class=post-title>767. Reorganize String</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on February 12, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/reorganize-string/
+Solution: top k elements
+Code:
+# Time Complexity: O(nlogc). Due to c bounded by the size of the alphabet, space is O(n). # Space Complexity: O(c). Due to c bounded by the size of the alphabet, space is O(1). from collections import Counter import heapq class Solution: def reorganizeString(self, s: str) -> str: char_counter = Counter(s) most_freq_chars = [] for char, freq in char_counter.items(): heapq.heappush(most_freq_chars, [-freq, char]) result = "" previous = None while len(most_freq_chars) > 0: count, char = heapq.
+<a href=https://zalman0813.github.io/posts/reorganize-string/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/top-k-elements/>top k elements</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/maxheap/>maxheap</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/pacific-atlantic-water-flow/><h2 class=post-title>417. Pacific Atlantic Water Flow</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on February 5, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/pacific-atlantic-water-flow/
+Solution: dfs
+Code: dfs
+# Time Complexity: O(m*n) # Space Complexity: O(m*n) class Solution: def pacificAtlantic(self, heights: List[List[int]]) -> List[List[int]]: pac = set() atl = set() ROWS = len(heights) COLS = len(heights[0]) def dfs(r, c, visit, prevHeight): if ((r, c) in visit or r &lt; 0 or c &lt; 0 or r >= ROWS or c >= COLS or heights[r][c] &lt; prevHeight ): return visit.add((r,c)) dfs(r + 1, c, visit, heights[r][c]) dfs(r - 1, c, visit, heights[r][c]) dfs(r, c + 1, visit, heights[r][c]) dfs(r, c - 1, visit, heights[r][c]) for c in range(COLS): dfs(0, c, pac, heights[0][c]) dfs(ROWS - 1, c, atl, heights[ROWS - 1][c]) for r in range(ROWS): dfs(r, 0, pac, heights[r][0]) dfs(r, COLS - 1, atl, heights[r][COLS-1]) res = [] for r in range(ROWS): for c in range(COLS): if (r, c) in pac and (r, c) in atl: res.
+<a href=https://zalman0813.github.io/posts/pacific-atlantic-water-flow/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/dfs/>dfs</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/169/>169</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/shortest-path-to-get-food/><h2 class=post-title>1730. Shortest Path to Get Food</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on February 5, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/shortest-path-to-get-food/
+Solution: bfs
+Code: bfs
+# Time Complexity: O(m*n) # Space Complexity: O(m*n) class Solution: def getFood(self, grid): ROWS, COLS = len(grid), len(grid[0]) visit, queue = set(), collections.deque() for r in range(ROWS): for c in range(COLS): if grid[r][c] == '*': queue.append((r,c, 0)) visit.add((r,c)) break directions = [(1,0),(0,-1), (-1,0), (0,1)] while queue: cur_r, cur_c, steps = queue.popleft() if grid[cur_r][cur_c] == '#': return steps else: for dr,dc in directions: new_r, new_c = r + dr, c + dc if (0&lt;=new_r&lt;ROWS) and (0&lt;=new_c&lt;COLS) and grid[new_r][new_c] !
+<a href=https://zalman0813.github.io/posts/shortest-path-to-get-food/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/bfs/>bfs</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/169/>169</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/find-k-pairs-with-smallest-sums/><h2 class=post-title>373. Find K Pairs With Smallest Sums</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on February 5, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/find-k-pairs-with-smallest-sums
+Solution: K-way merge
+Code: K-way merge
+# Time Complexity: O(mlogm + klogm) -> (m + k)logm # Space Complexity: O(m), where m = min(k, n1) class Solution: def kSmallestPairs(self, nums1: List[int], nums2: List[int], k: int) -> List[List[int]]: result = [] minHeap = [] # pop & push for i in range(min(k,len(nums1))): heappush(minHeap, (nums1[i]+nums2[0], i, 0)) counter = 1 while counter &lt;= k and minHeap: _, i1, i2 = heappop(minHeap) result.
+<a href=https://zalman0813.github.io/posts/find-k-pairs-with-smallest-sums/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/k-way-merge/>K-way merge</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/kth-smallest-element-in-a-sorted-matrix/><h2 class=post-title>378. Kth Smallest Element in a Sorted Matrix</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on February 3, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/description/>https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/description/</a></p><p>Solution: K-way merge</p><p>Code:
+K-way merge</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Time Complexity: O(nlogn+(klogn))=O((n+k)logn)</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Space Complexity: O(n*n)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>kthSmallest</span>(self, matrix: List[List[int]], k: int) <span style=color:#f92672>-&gt;</span> int:
+</span></span><span style=display:flex><span>        <span style=color:#75715e># TODO: Write your code here</span>
+</span></span><span style=display:flex><span>        minHeap <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span>        <span style=color:#75715e># firstly, insert (first elemetn of list, index of fist element, list)</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> l <span style=color:#f92672>in</span> matrix:
+</span></span><span style=display:flex><span>            heappush(minHeap, (l[<span style=color:#ae81ff>0</span>], <span style=color:#ae81ff>0</span>, l))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> _ <span style=color:#f92672>in</span> range(k <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>):
+</span></span><span style=display:flex><span>            value, index, l <span style=color:#f92672>=</span> heappop(minHeap)
+</span></span><span style=display:flex><span>            index <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> index <span style=color:#f92672>&lt;</span> len(l):
+</span></span><span style=display:flex><span>                heappush(minHeap, (l[index], index, l))
+</span></span><span style=display:flex><span>        value, _, _ <span style=color:#f92672>=</span> heappop(minHeap)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> value
+</span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/k-way-merge/>K-way merge</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/binary-tree-right-side-view/><h2 class=post-title>199. Binary Tree Right Side View</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on January 14, 2023
 &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/binary-tree-maximum-path-sum
 Solution: dfs Code:
 # Time Complexity: O(n) # Space Complexity: O(n) # Definition for a binary tree node. # class TreeNode: # def __init__(self, val=0, left=None, right=None): # self.val = val # self.left = left # self.right = right from collections import deque class Solution: def rightSideView(self, root: Optional[TreeNode]) -> List[int]: if not root: return [] result = [] q = deque() q.append(root) while q: for i in range(len(q)): curNode = q.

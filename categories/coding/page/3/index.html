@@ -3,7 +3,65 @@
 <span class=icon-bar></span>
 <span class=icon-bar></span>
 <span class=icon-bar></span></button>
-<a class=navbar-brand href=https://zalman0813.github.io>Pin Code Blog</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"></ul></div></div></nav><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=categories-heading><h1>coding</h1><hr class=small></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-md-10 col-md-offset-1"><div class=posts-list><article class=post-preview><a href=https://zalman0813.github.io/posts/jump-game-i/><h2 class=post-title>55. Jump Game I</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on February 26, 2023
+<a class=navbar-brand href=https://zalman0813.github.io>Pin Code Blog</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"></ul></div></div></nav><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=categories-heading><h1>coding</h1><hr class=small></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-md-10 col-md-offset-1"><div class=posts-list><article class=post-preview><a href=https://zalman0813.github.io/posts/matchsticks-to-square/><h2 class=post-title>473. Matchsticks to Square</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 5, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/matchsticks-to-square>https://leetcode.com/problems/matchsticks-to-square</a></p><p>Status: done</p><p>Solution: backtracking</p><p>Code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e>#Time Complexity: O(4^n)</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#Space Complexity: O(n)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>makesquare</span>(self, matchsticks: List[int]) <span style=color:#f92672>-&gt;</span> bool:
+</span></span><span style=display:flex><span>        tot_length <span style=color:#f92672>=</span> sum(matchsticks) 
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> tot_length <span style=color:#f92672>%</span> <span style=color:#ae81ff>4</span> <span style=color:#f92672>!=</span> <span style=color:#ae81ff>0</span>:
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>False</span>
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        length <span style=color:#f92672>=</span> tot_length <span style=color:#f92672>/</span> <span style=color:#ae81ff>4</span>
+</span></span><span style=display:flex><span>        sides <span style=color:#f92672>=</span> [<span style=color:#ae81ff>0</span>]<span style=color:#f92672>*</span><span style=color:#ae81ff>4</span>
+</span></span><span style=display:flex><span>        matchsticks<span style=color:#f92672>.</span>sort(reverse<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>backtracking</span>(i):
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> i <span style=color:#f92672>==</span> len(matchsticks):
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>True</span>
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>for</span> j <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>4</span>):
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>if</span> sides[j] <span style=color:#f92672>+</span> matchsticks[i] <span style=color:#f92672>&lt;=</span> length:
+</span></span><span style=display:flex><span>                    sides[j] <span style=color:#f92672>+=</span> matchsticks[i]
+</span></span><span style=display:flex><span>                    <span style=color:#66d9ef>if</span> backtracking(i<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>):
+</span></span><span style=display:flex><span>                        <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>True</span>
+</span></span><span style=display:flex><span>                    sides[j] <span style=color:#f92672>-=</span> matchsticks[i]
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>False</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> backtracking(<span style=color:#ae81ff>0</span>)
+</span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/169/>169</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/backtracking/>backtracking</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/house-robber-iii/><h2 class=post-title>337. House Robber Iii</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 5, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/house-robber-iii/
+Status: done
+Solution: backtracking
+Code:
+#Time Complexity: O(n) #Space Complexity: O(h), , where h is the height of the tree # Definition for a binary tree node. # class TreeNode: # def __init__(self, val=0, left=None, right=None): # self.val = val # self.left = left # self.right = right class Solution: def dfs(self, root): if root is None: return [0, 0] leftChild = self.dfs(root.left) rightChild = self.dfs(root.right) not_node = max(leftChild) + max(rightChild) node = root.
+<a href=https://zalman0813.github.io/posts/house-robber-iii/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/169/>169</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/backtracking/>backtracking</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/restore-ip-addresses/><h2 class=post-title>93. Restore Ip Addresses</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 5, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/restore-ip-addresses/
+Status: done
+Solution: backtracking
+Code:
+#Time Complexity: O(1) #Space Complexity: O(1) class Solution: def restoreIpAddresses(self, s: str) -> List[str]: if len(s) &lt; 4 or len(s) > 12: return [] result = [] def backtracking(i, dots, curIp): if dots == 4 and i == len(s): result.append(curIp[:-1]) return if dots > 4: return for j in range(i, min(i+3,len(s))): if int(s[i:j+1]) &lt;= 255 and (i == j or s[i] != '0'): backtracking(j+1, dots + 1, curIp + s[i:j+1] + ".
+<a href=https://zalman0813.github.io/posts/restore-ip-addresses/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/169/>169</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/backtracking/>backtracking</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/word-search/><h2 class=post-title>79. Word Search</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 5, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/word-search/
+Status: done
+Solution: backtracking
+Code:
+#Time Complexity: O(n×3^l) #Space Complexity: O(l), , where l is the length of the word to be searched in the grid. class Solution: def word_search(self, grid, word): n = len(grid) if n &lt; 1: return False m = len(grid[0]) if m &lt; 1: return False for row in range(n): for col in range(m): if self.depth_first_search(row, col, grid, word): return True return False def depth_first_search(self,row, col, grid, word): if len(word) == 0: return True if row &lt; 0 or row == len(grid) or col &lt; 0 or col == len(grid[0]) \ or word[0].
+<a href=https://zalman0813.github.io/posts/word-search/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/169/>169</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/backtracking/>backtracking</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/n-queens/><h2 class=post-title>51. N Queens</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 5, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/n-queens/
+Status: done
+Solution: backtracking
+Code:
+#Time Complexity: O(n^2) #Space Complexity: O(n) class Solution: def mapping(self, n, i): pattern = ["."]*n pattern[i] = 'Q' return "".join(pattern) def is_valid_move(self, proposed_row, proposed_col, solution): for i in range(proposed_row): old_row = i old_col = solution[i] diagonal_offset = proposed_row - old_row if (proposed_col == old_col or proposed_col + diagonal_offset == old_col or proposed_col - diagonal_offset == old_col): return False return True def backtracking(self, n, row, solution, results): if row == n: results.
+<a href=https://zalman0813.github.io/posts/n-queens/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/169/>169</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/hard/>hard</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/backtracking/>backtracking</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/jump-game-i/><h2 class=post-title>55. Jump Game I</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on February 26, 2023
 &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/jump-game/>https://leetcode.com/problems/jump-game/</a></p><p>Solution: greedy</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e># Time Complexity: O(n)</span>
 </span></span><span style=display:flex><span><span style=color:#75715e># Space Complexity: O(1)</span>
@@ -106,113 +164,6 @@
 </span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> times
 </span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/greedy/>greedy</a>&nbsp;
 <a href=https://zalman0813.github.io/tags/two-pointers/>two pointers</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/search-in-rotated-sorted-array-ii/><h2 class=post-title>81. Search in Rotated Sorted Array Ii</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on February 19, 2023
-&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/search-in-rotated-sorted-array-ii>https://leetcode.com/problems/search-in-rotated-sorted-array-ii</a></p><p>Solution: binary search</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Time Complexity: O(log(n))</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Space Complexity: O(1)</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>search</span>(self, nums: List[int], target: int) <span style=color:#f92672>-&gt;</span> bool:
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> len(nums) <span style=color:#f92672>==</span> <span style=color:#ae81ff>1</span>:
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> nums[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>==</span> target:
-</span></span><span style=display:flex><span>                <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>True</span>
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>else</span>:
-</span></span><span style=display:flex><span>                <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>False</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>        l, r <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>, len(nums) <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>        
-</span></span><span style=display:flex><span>       
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>while</span> l <span style=color:#f92672>&lt;=</span> r:
-</span></span><span style=display:flex><span>            <span style=color:#75715e># shifting to remove duplicate elements</span>
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>while</span> l<span style=color:#f92672>&lt;</span>r <span style=color:#f92672>and</span> nums[l] <span style=color:#f92672>==</span> nums[l<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>]:
-</span></span><span style=display:flex><span>                l<span style=color:#f92672>+=</span><span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>while</span> l<span style=color:#f92672>&lt;</span>r <span style=color:#f92672>and</span> nums[r] <span style=color:#f92672>==</span> nums[r<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>]:
-</span></span><span style=display:flex><span>                r<span style=color:#f92672>-=</span><span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>            mid <span style=color:#f92672>=</span> (l <span style=color:#f92672>+</span> r) <span style=color:#f92672>//</span> <span style=color:#ae81ff>2</span> 
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> target <span style=color:#f92672>==</span> nums[mid]:
-</span></span><span style=display:flex><span>                <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>True</span>
-</span></span><span style=display:flex><span>            
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> nums[l] <span style=color:#f92672>&lt;=</span> nums[mid]:
-</span></span><span style=display:flex><span>                <span style=color:#66d9ef>if</span> target <span style=color:#f92672>&gt;=</span> nums[l] <span style=color:#f92672>and</span> target <span style=color:#f92672>&lt;</span> nums[mid]:
-</span></span><span style=display:flex><span>                    r <span style=color:#f92672>=</span> mid <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>                <span style=color:#66d9ef>else</span>:
-</span></span><span style=display:flex><span>                    l <span style=color:#f92672>=</span> mid <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>else</span>:
-</span></span><span style=display:flex><span>                <span style=color:#66d9ef>if</span> target <span style=color:#f92672>&gt;</span> nums[mid] <span style=color:#f92672>and</span> target <span style=color:#f92672>&lt;=</span> nums[r]:
-</span></span><span style=display:flex><span>                    l <span style=color:#f92672>=</span> mid <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>                <span style=color:#66d9ef>else</span>:
-</span></span><span style=display:flex><span>                    r <span style=color:#f92672>=</span> mid <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>False</span>
-</span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/binary-search/>binary search</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/single-element-in-a-sorted-array/><h2 class=post-title>540. Single Element in a Sorted Array</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on February 19, 2023
-&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/single-element-in-a-sorted-array/>https://leetcode.com/problems/single-element-in-a-sorted-array/</a></p><p>Solution: binary search</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Time Complexity: O(log(n))</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Space Complexity: O(1)</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>singleNonDuplicate</span>(self, nums: List[int]) <span style=color:#f92672>-&gt;</span> int:
-</span></span><span style=display:flex><span>        l, r <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>, len(nums) <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>while</span> l <span style=color:#f92672>&lt;</span> r:
-</span></span><span style=display:flex><span>            m <span style=color:#f92672>=</span> l <span style=color:#f92672>+</span> (r<span style=color:#f92672>-</span>l)<span style=color:#f92672>//</span><span style=color:#ae81ff>2</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>            <span style=color:#75715e># use the pair arrangement propert. even is equalt to next odd until an unpaired number appears,</span>
-</span></span><span style=display:flex><span>            <span style=color:#75715e># If the element at mid and mid + 1 are the same then</span>
-</span></span><span style=display:flex><span>            <span style=color:#75715e># the single element must appear after the mid point</span>
-</span></span><span style=display:flex><span>            <span style=color:#75715e># Otherwise we must search before the mid point</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> m <span style=color:#f92672>%</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>==</span> <span style=color:#ae81ff>1</span>:
-</span></span><span style=display:flex><span>                m <span style=color:#f92672>-=</span> <span style=color:#ae81ff>1</span> <span style=color:#75715e># to preceding even index</span>
-</span></span><span style=display:flex><span>            
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> nums[m] <span style=color:#f92672>==</span> nums[m <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>]:
-</span></span><span style=display:flex><span>                l <span style=color:#f92672>=</span> m <span style=color:#f92672>+</span> <span style=color:#ae81ff>2</span>
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>else</span>:
-</span></span><span style=display:flex><span>                r <span style=color:#f92672>=</span> m
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> nums[l]
-</span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/binary-search/>binary search</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/random-pick-with-weight/><h2 class=post-title>528. Random Pick With Weight</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on February 19, 2023
-&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/random-pick-with-weight/
-Solution: binary search
-# Time Complexity: # 1. Construct: O(n) # 2. pickIndex: o(logn) # Space Complexity: # 1. Construct: O(n) # 2. pickIndex: O(1) class Solution: def __init__(self, w: List[int]): self.cum_sums = [] cum = 0 for i in range(len(w)): cum += w[i] self.cum_sums.append(cum) def pickIndex(self) -> int: target = random.randint(1, self.cum_sums[-1]) # Assigning low pointer at the start of the array low = 0 # Assigning high pointer at the end of the array high = len(self.
-<a href=https://zalman0813.github.io/posts/random-pick-with-weight/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/binary-search/>binary search</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/find-k-closest-elements/><h2 class=post-title>658. Find K Closest Elements</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on February 19, 2023
-&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/find-k-closest-elements/description/>https://leetcode.com/problems/find-k-closest-elements/description/</a></p><p>Solution: binary search</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Time Complexity: O(log(n-k))</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Space Complexity: O(1)</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>findClosestElements</span>(self, arr: List[int], k: int, x: int) <span style=color:#f92672>-&gt;</span> List[int]:
-</span></span><span style=display:flex><span>        l, r <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>, len(arr) <span style=color:#f92672>-</span> k
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>while</span> l <span style=color:#f92672>&lt;</span> r:
-</span></span><span style=display:flex><span>            m <span style=color:#f92672>=</span> l <span style=color:#f92672>+</span> (r <span style=color:#f92672>-</span> l) <span style=color:#f92672>//</span> <span style=color:#ae81ff>2</span>
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> x <span style=color:#f92672>-</span> arr[m] <span style=color:#f92672>&gt;</span> arr[m<span style=color:#f92672>+</span>k] <span style=color:#f92672>-</span> x:
-</span></span><span style=display:flex><span>                l <span style=color:#f92672>=</span> m <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>else</span>:
-</span></span><span style=display:flex><span>                r <span style=color:#f92672>=</span> m
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> arr[l:l<span style=color:#f92672>+</span>k]
-</span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/binary-search/>binary search</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/kth-largest-element-in-an-array/><h2 class=post-title>215. Kth Largest Element in an Array</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on February 13, 2023
-&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/kth-largest-element-in-an-array/description/>https://leetcode.com/problems/kth-largest-element-in-an-array/description/</a></p><p>Solution: top k elements
-Code:
-top k elements</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Time Complexity: O(nlogk)</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Space Complexity: O(k)</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>import</span> heapq
-</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>findKthLargest</span>(self, nums: List[int], k: int) <span style=color:#f92672>-&gt;</span> int:
-</span></span><span style=display:flex><span>        <span style=color:#75715e># your code will replace this placeholder return statement</span>
-</span></span><span style=display:flex><span>        minHeap <span style=color:#f92672>=</span> []
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(len(nums)):
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> len(minHeap) <span style=color:#f92672>==</span> k:
-</span></span><span style=display:flex><span>                <span style=color:#66d9ef>if</span> minHeap[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>&lt;</span> nums[i]:
-</span></span><span style=display:flex><span>                    heappop(minHeap)
-</span></span><span style=display:flex><span>                    heappush(minHeap, nums[i])
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>else</span>:
-</span></span><span style=display:flex><span>                heappush(minHeap, nums[i])
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> minHeap[<span style=color:#ae81ff>0</span>]
-</span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/top-k-elements/>top K elements</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/minheap/>minHeap</a>&nbsp;
 <a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;</div></article></div><ul class="pager main-pager"><li class=previous><a href=https://zalman0813.github.io/categories/coding/page/2/>&larr; Newer Posts</a></li><li class=next><a href=https://zalman0813.github.io/categories/coding/page/4/>Older Posts &rarr;</a></li></ul></div></div></div><footer class=post-footer><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><ul class="list-inline text-center footer-links"></ul><p class="credits copyright text-muted">&nbsp;&bull;&nbsp;&copy;
 2023
 &nbsp;&bull;&nbsp;

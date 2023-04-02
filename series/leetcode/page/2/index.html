@@ -3,7 +3,138 @@
 <span class=icon-bar></span>
 <span class=icon-bar></span>
 <span class=icon-bar></span></button>
-<a class=navbar-brand href=https://zalman0813.github.io>Pin Code Blog</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"></ul></div></div></nav><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=series-heading><h1>leetcode</h1><hr class=small></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-md-10 col-md-offset-1"><div class=posts-list><article class=post-preview><a href=https://zalman0813.github.io/posts/climbing-stairs/><h2 class=post-title>70. Climbing Stairs</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 12, 2023
+<a class=navbar-brand href=https://zalman0813.github.io>Pin Code Blog</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"></ul></div></div></nav><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=series-heading><h1>leetcode</h1><hr class=small></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-md-10 col-md-offset-1"><div class=posts-list><article class=post-preview><a href=https://zalman0813.github.io/posts/partition-a-set-into-two-subsets-such-that-the-difference-of-subset-sums-is-minimum/><h2 class=post-title>Partition a Set Into Two Subsets Such That the Difference of Subset Sums Is Minimum</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 19, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href="https://www.codingninjas.com/codestudio/problems/partition-a-set-into-two-subsets-such-that-the-difference-of-subset-sums-is-minimum_842494?leftPanelTab=0">https://www.codingninjas.com/codestudio/problems/partition-a-set-into-two-subsets-such-that-the-difference-of-subset-sums-is-minimum_842494?leftPanelTab=0</a></p><p>Status: done</p><p>Solution: dp-top down</p><p>Code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e>#Time Complexity: O(n*s), where s is the target sum</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#Space Complexity: O(n*s)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>minSubsetSumDifference</span>(nums, n):
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Write your code here.</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Return the minimum difference in the form of an integer.</span>
+</span></span><span style=display:flex><span>    dp <span style=color:#f92672>=</span> [[<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span> <span style=color:#66d9ef>for</span> _ <span style=color:#f92672>in</span> range(sum(nums)<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>)] <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(len(nums))]
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> rec(nums,<span style=color:#ae81ff>0</span>,  <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, dp)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>rec</span>(nums, i, sum1, sum2, dp):
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> i <span style=color:#f92672>==</span> len(nums):
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> abs(sum1 <span style=color:#f92672>-</span> sum2)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> dp[i][sum1] <span style=color:#f92672>==</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        dp[i][sum1] <span style=color:#f92672>=</span> min(
+</span></span><span style=display:flex><span>            rec(
+</span></span><span style=display:flex><span>                nums, i <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>, sum1 <span style=color:#f92672>+</span> nums[i], sum2, dp
+</span></span><span style=display:flex><span>            ),
+</span></span><span style=display:flex><span>            rec(
+</span></span><span style=display:flex><span>                nums, i <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>, sum1, sum2 <span style=color:#f92672>+</span> nums[i], dp
+</span></span><span style=display:flex><span>            ),
+</span></span><span style=display:flex><span>        )
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> dp[i][sum1]
+</span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/hard/>hard</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/dp/>dp</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/number-of-subsets/><h2 class=post-title>Number of Subsets</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 19, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href="https://www.codingninjas.com/codestudio/problems/number-of-subsets_3952532?source=youtube&amp;campaign=striver_dp_videos&amp;utm_source=youtube&amp;utm_medium=affiliate&amp;utm_campaign=striver_dp_videos">https://www.codingninjas.com/codestudio/problems/number-of-subsets_3952532?source=youtube&amp;campaign=striver_dp_videos&amp;utm_source=youtube&amp;utm_medium=affiliate&amp;utm_campaign=striver_dp_videos</a></p><p>Status: done</p><p>Solution: dp-bottom up</p><p>Code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e>#Time Complexity: O(n*s), where s is the target sum</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#Space Complexity: O(n*s)</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> os <span style=color:#f92672>import</span> <span style=color:#f92672>*</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> sys <span style=color:#f92672>import</span> <span style=color:#f92672>*</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> collections <span style=color:#f92672>import</span> <span style=color:#f92672>*</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> math <span style=color:#f92672>import</span> <span style=color:#f92672>*</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> typing <span style=color:#f92672>import</span> List
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>findWays</span>(nums: List[int], target_sum: int) <span style=color:#f92672>-&gt;</span> int:
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Replace this placeholder return statement with your code</span>
+</span></span><span style=display:flex><span>    tot <span style=color:#f92672>=</span> sum(nums)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> tot <span style=color:#f92672>&lt;</span> target_sum:
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>    dp <span style=color:#f92672>=</span> [ [<span style=color:#ae81ff>0</span> <span style=color:#66d9ef>for</span> j <span style=color:#f92672>in</span> range(target_sum<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>)] <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(len(nums))]
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Base case 1</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> nums[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:
+</span></span><span style=display:flex><span>        dp[<span style=color:#ae81ff>0</span>][<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Base case 2</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>else</span>: 
+</span></span><span style=display:flex><span>        dp[<span style=color:#ae81ff>0</span>][<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> nums[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>&lt;=</span> target_sum:
+</span></span><span style=display:flex><span>            dp[<span style=color:#ae81ff>0</span>][nums[<span style=color:#ae81ff>0</span>]] <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>1</span>, len(dp)):
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> required_sum <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>0</span>, len(dp[<span style=color:#ae81ff>0</span>])):
+</span></span><span style=display:flex><span>            sum1 <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> nums[i] <span style=color:#f92672>&lt;=</span> required_sum:
+</span></span><span style=display:flex><span>                sum1 <span style=color:#f92672>=</span> dp[i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][required_sum <span style=color:#f92672>-</span> nums[i]]
+</span></span><span style=display:flex><span>            sum2 <span style=color:#f92672>=</span> dp[i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][required_sum]
+</span></span><span style=display:flex><span>            dp[i][required_sum] <span style=color:#f92672>=</span> sum1 <span style=color:#f92672>+</span> sum2
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> dp[len(nums)<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][target_sum]
+</span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/dp/>dp</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/find-subarrays-with-equal-sum/><h2 class=post-title>2395. Find Subarrays With Equal Sum</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 19, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Time Complexity: O(n)</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Space Complexity: O(k), numbers of sum</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>findSubarrays</span>(self, nums: List[int]) <span style=color:#f92672>-&gt;</span> bool:
+</span></span><span style=display:flex><span>        sums <span style=color:#f92672>=</span> set()
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(len(nums)<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>):
+</span></span><span style=display:flex><span>            t <span style=color:#f92672>=</span> nums[i]<span style=color:#f92672>+</span>nums[i<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>]
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> t <span style=color:#f92672>in</span> sums:
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>True</span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>                sums<span style=color:#f92672>.</span>add(t)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>False</span>
+</span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/hash-table/>hash table</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/easy/>easy</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/minimum-number-of-refueling-stops/><h2 class=post-title>871. Minimum Number of Refueling Stops</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 19, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/minimum-number-of-refueling-stops/description/>https://leetcode.com/problems/minimum-number-of-refueling-stops/description/</a></p><p>Status: done</p><p>Solution: dp-bottom up</p><p>Code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e>#Time Complexity: O(n^2)</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#Space Complexity: O(n^2)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>minRefuelStops</span>(self, target: int, startFuel: int, stations: List[List[int]]) <span style=color:#f92672>-&gt;</span> int:
+</span></span><span style=display:flex><span>        n <span style=color:#f92672>=</span> len(stations)
+</span></span><span style=display:flex><span>        dp <span style=color:#f92672>=</span> [ [<span style=color:#ae81ff>0</span>]<span style=color:#f92672>*</span>(n<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>) <span style=color:#66d9ef>for</span> _ <span style=color:#f92672>in</span> range(n<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>) ]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>while</span> i <span style=color:#f92672>&lt;=</span> n:
+</span></span><span style=display:flex><span>            dp[i][<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> startFuel
+</span></span><span style=display:flex><span>            i <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>while</span> i <span style=color:#f92672>&lt;=</span> n:
+</span></span><span style=display:flex><span>            j <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>while</span> j <span style=color:#f92672>&lt;=</span> i:
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>if</span> dp[i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][j<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>&gt;=</span> stations[i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][<span style=color:#ae81ff>0</span>]:
+</span></span><span style=display:flex><span>                    dp[i][j] <span style=color:#f92672>=</span> max(dp[i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][j], dp[i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][j<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>+</span> stations[i <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>][<span style=color:#ae81ff>1</span>])
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>                    dp[i][j] <span style=color:#f92672>=</span> dp[i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][j]
+</span></span><span style=display:flex><span>                j <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>            i <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>        i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>while</span> (i <span style=color:#f92672>&lt;=</span> n):
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> dp[n][i] <span style=color:#f92672>&gt;=</span> target:
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>return</span> i
+</span></span><span style=display:flex><span>            i <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>
+</span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/hard/>hard</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/dp/>dp</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/count-square-submatrices-with-all-ones/><h2 class=post-title>1277. Count Square Submatrices With All Ones</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 19, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/count-square-submatrices-with-all-ones/description/>https://leetcode.com/problems/count-square-submatrices-with-all-ones/description/</a></p><p>Status: done</p><p>Solution: dp-bottom up</p><p>Code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e>#Time Complexity: O(n*m)</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#Space Complexity: O(n*m)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>countSquares</span>(self, nums: List[List[int]]) <span style=color:#f92672>-&gt;</span> int:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        rows <span style=color:#f92672>=</span> len(nums)
+</span></span><span style=display:flex><span>        cols <span style=color:#f92672>=</span> len(nums[<span style=color:#ae81ff>0</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        dp <span style=color:#f92672>=</span> [ [<span style=color:#ae81ff>0</span>]<span style=color:#f92672>*</span>cols <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(rows) ]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(rows):
+</span></span><span style=display:flex><span>            dp[i][<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> nums[i][<span style=color:#ae81ff>0</span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> j <span style=color:#f92672>in</span> range(cols):
+</span></span><span style=display:flex><span>            dp[<span style=color:#ae81ff>0</span>][j] <span style=color:#f92672>=</span> nums[<span style=color:#ae81ff>0</span>][j]
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>1</span>, rows):
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>for</span> j <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>1</span>, cols):
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>if</span> nums[i][j] <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:
+</span></span><span style=display:flex><span>                    <span style=color:#66d9ef>continue</span>
+</span></span><span style=display:flex><span>                dp[i][j] <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span> <span style=color:#f92672>+</span> min(dp[i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][j], dp[i][j<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>], dp[i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][j<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>])
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> sum([sum(row) <span style=color:#66d9ef>for</span> row <span style=color:#f92672>in</span> dp])
+</span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/dp/>dp</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/climbing-stairs/><h2 class=post-title>70. Climbing Stairs</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 12, 2023
 &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/climbing-stairs/>https://leetcode.com/problems/climbing-stairs/</a></p><p>Status: done</p><p>Solution: dp-bottom up</p><p>Code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e>#Time Complexity: O(n)</span>
 </span></span><span style=display:flex><span><span style=color:#75715e>#Space Complexity: O(1)</span>
 </span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
@@ -84,65 +215,7 @@ Code:
 </span></span><span style=display:flex><span>                    dp[i][tot <span style=color:#f92672>+</span> t <span style=color:#f92672>+</span> nums[i]] <span style=color:#f92672>+=</span> dp[i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][tot <span style=color:#f92672>+</span> t]
 </span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> dp[len(nums) <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>][target <span style=color:#f92672>+</span> tot]
 </span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/dp/>dp</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/matchsticks-to-square/><h2 class=post-title>473. Matchsticks to Square</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 5, 2023
-&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/matchsticks-to-square>https://leetcode.com/problems/matchsticks-to-square</a></p><p>Status: done</p><p>Solution: backtracking</p><p>Code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e>#Time Complexity: O(4^n)</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>#Space Complexity: O(n)</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>makesquare</span>(self, matchsticks: List[int]) <span style=color:#f92672>-&gt;</span> bool:
-</span></span><span style=display:flex><span>        tot_length <span style=color:#f92672>=</span> sum(matchsticks) 
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> tot_length <span style=color:#f92672>%</span> <span style=color:#ae81ff>4</span> <span style=color:#f92672>!=</span> <span style=color:#ae81ff>0</span>:
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>False</span>
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>        length <span style=color:#f92672>=</span> tot_length <span style=color:#f92672>/</span> <span style=color:#ae81ff>4</span>
-</span></span><span style=display:flex><span>        sides <span style=color:#f92672>=</span> [<span style=color:#ae81ff>0</span>]<span style=color:#f92672>*</span><span style=color:#ae81ff>4</span>
-</span></span><span style=display:flex><span>        matchsticks<span style=color:#f92672>.</span>sort(reverse<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>)
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>backtracking</span>(i):
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> i <span style=color:#f92672>==</span> len(matchsticks):
-</span></span><span style=display:flex><span>                <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>True</span>
-</span></span><span style=display:flex><span>            
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>for</span> j <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>4</span>):
-</span></span><span style=display:flex><span>                <span style=color:#66d9ef>if</span> sides[j] <span style=color:#f92672>+</span> matchsticks[i] <span style=color:#f92672>&lt;=</span> length:
-</span></span><span style=display:flex><span>                    sides[j] <span style=color:#f92672>+=</span> matchsticks[i]
-</span></span><span style=display:flex><span>                    <span style=color:#66d9ef>if</span> backtracking(i<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>):
-</span></span><span style=display:flex><span>                        <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>True</span>
-</span></span><span style=display:flex><span>                    sides[j] <span style=color:#f92672>-=</span> matchsticks[i]
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>False</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> backtracking(<span style=color:#ae81ff>0</span>)
-</span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/169/>169</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/backtracking/>backtracking</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/house-robber-iii/><h2 class=post-title>337. House Robber Iii</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 5, 2023
-&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/house-robber-iii/
-Status: done
-Solution: backtracking
-Code:
-#Time Complexity: O(n) #Space Complexity: O(h), , where h is the height of the tree # Definition for a binary tree node. # class TreeNode: # def __init__(self, val=0, left=None, right=None): # self.val = val # self.left = left # self.right = right class Solution: def dfs(self, root): if root is None: return [0, 0] leftChild = self.dfs(root.left) rightChild = self.dfs(root.right) not_node = max(leftChild) + max(rightChild) node = root.
-<a href=https://zalman0813.github.io/posts/house-robber-iii/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/169/>169</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/backtracking/>backtracking</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/restore-ip-addresses/><h2 class=post-title>93. Restore Ip Addresses</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 5, 2023
-&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/restore-ip-addresses/
-Status: done
-Solution: backtracking
-Code:
-#Time Complexity: O(1) #Space Complexity: O(1) class Solution: def restoreIpAddresses(self, s: str) -> List[str]: if len(s) &lt; 4 or len(s) > 12: return [] result = [] def backtracking(i, dots, curIp): if dots == 4 and i == len(s): result.append(curIp[:-1]) return if dots > 4: return for j in range(i, min(i+3,len(s))): if int(s[i:j+1]) &lt;= 255 and (i == j or s[i] != '0'): backtracking(j+1, dots + 1, curIp + s[i:j+1] + ".
-<a href=https://zalman0813.github.io/posts/restore-ip-addresses/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/169/>169</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/backtracking/>backtracking</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/word-search/><h2 class=post-title>79. Word Search</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 5, 2023
-&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/word-search/
-Status: done
-Solution: backtracking
-Code:
-#Time Complexity: O(n×3^l) #Space Complexity: O(l), , where l is the length of the word to be searched in the grid. class Solution: def word_search(self, grid, word): n = len(grid) if n &lt; 1: return False m = len(grid[0]) if m &lt; 1: return False for row in range(n): for col in range(m): if self.depth_first_search(row, col, grid, word): return True return False def depth_first_search(self,row, col, grid, word): if len(word) == 0: return True if row &lt; 0 or row == len(grid) or col &lt; 0 or col == len(grid[0]) \ or word[0].
-<a href=https://zalman0813.github.io/posts/word-search/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/169/>169</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/backtracking/>backtracking</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/n-queens/><h2 class=post-title>51. N Queens</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 5, 2023
-&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/n-queens/
-Status: done
-Solution: backtracking
-Code:
-#Time Complexity: O(n^2) #Space Complexity: O(n) class Solution: def mapping(self, n, i): pattern = ["."]*n pattern[i] = 'Q' return "".join(pattern) def is_valid_move(self, proposed_row, proposed_col, solution): for i in range(proposed_row): old_row = i old_col = solution[i] diagonal_offset = proposed_row - old_row if (proposed_col == old_col or proposed_col + diagonal_offset == old_col or proposed_col - diagonal_offset == old_col): return False return True def backtracking(self, n, row, solution, results): if row == n: results.
-<a href=https://zalman0813.github.io/posts/n-queens/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/169/>169</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/hard/>hard</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/backtracking/>backtracking</a>&nbsp;</div></article></div><ul class="pager main-pager"><li class=previous><a href=https://zalman0813.github.io/series/leetcode/page/1/>&larr; Newer Posts</a></li><li class=next><a href=https://zalman0813.github.io/series/leetcode/page/3/>Older Posts &rarr;</a></li></ul></div></div></div><footer class=post-footer><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><ul class="list-inline text-center footer-links"></ul><p class="credits copyright text-muted">&nbsp;&bull;&nbsp;&copy;
+<a href=https://zalman0813.github.io/tags/dp/>dp</a>&nbsp;</div></article></div><ul class="pager main-pager"><li class=previous><a href=https://zalman0813.github.io/series/leetcode/page/1/>&larr; Newer Posts</a></li><li class=next><a href=https://zalman0813.github.io/series/leetcode/page/3/>Older Posts &rarr;</a></li></ul></div></div></div><footer class=post-footer><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><ul class="list-inline text-center footer-links"></ul><p class="credits copyright text-muted">&nbsp;&bull;&nbsp;&copy;
 2023
 &nbsp;&bull;&nbsp;
 <a href=https://zalman0813.github.io>Pin Code Blog</a></p><p class="credits theme-by text-muted"><a href=https://gohugo.io>Hugo v0.111.3</a> powered &nbsp;&bull;&nbsp; Theme <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> adapted from <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a></p></div></div></div></footer><script src=https://code.jquery.com/jquery-1.12.4.min.js integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin=anonymous></script>
