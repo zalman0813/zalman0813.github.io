@@ -1,0 +1,157 @@
+<!doctype html><html lang=en itemscope itemtype=http://schema.org/WebPage><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>169 - Pin Code Blog</title><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","name":"Pin Code Blog","url":"https:\/\/zalman0813.github.io"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Organization","name":"","url":"https:\/\/zalman0813.github.io"}</script><meta property="og:title" content="169"><meta property="og:url" content="https://zalman0813.github.io/tags/169/"><meta property="og:type" content="website"><meta property="og:site_name" content="Pin Code Blog"><meta name=twitter:title content="169"><meta name=twitter:card content="summary"><meta name=generator content="Hugo 0.111.3"><link rel=stylesheet href=https://use.fontawesome.com/releases/v5.5.0/css/all.css integrity=sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU crossorigin=anonymous><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css><link rel=stylesheet href=https://zalman0813.github.io/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"><link rel=stylesheet href=https://zalman0813.github.io/css/syntax.css><link rel=stylesheet href=https://zalman0813.github.io/css/codeblock.css><link rel=alternate type=application/rss+xml href=https://zalman0813.github.io/tags/169/index.xml title="Pin Code Blog"><link rel=alternate type=application/rss+xml href=https://zalman0813.github.io/tags/169/index.xml title="Pin Code Blog"></head><body><nav class="navbar navbar-default navbar-fixed-top navbar-custom"><div class=container-fluid><div class=navbar-header><button type=button class=navbar-toggle data-toggle=collapse data-target=#main-navbar>
+<span class=sr-only>Toggle navigation</span>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+<span class=icon-bar></span></button>
+<a class=navbar-brand href=https://zalman0813.github.io>Pin Code Blog</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"></ul></div></div></nav><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=tags-heading><h1>169</h1><hr class=small></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-md-10 col-md-offset-1"><div class=posts-list><article class=post-preview><a href=https://zalman0813.github.io/posts/palindrome-partitioning/><h2 class=post-title>131. Palindrome Partitioning</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on April 9, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/palindromic-substrings/>https://leetcode.com/problems/palindromic-substrings/</a></p><p>Code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Time Complexity: O(2^n)</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Space Complexity: O(2^n)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>partition</span>(self, s: str) <span style=color:#f92672>-&gt;</span> List[List[str]]:
+</span></span><span style=display:flex><span>        dp <span style=color:#f92672>=</span> [[] <span style=color:#66d9ef>for</span> _ <span style=color:#f92672>in</span> range(len(s) <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>)]
+</span></span><span style=display:flex><span>        dp[<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>=</span> [[]]
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(len(s) <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>, <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>, <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>):
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>for</span> j <span style=color:#f92672>in</span> range(i <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>, len(s) <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>):
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>if</span> s[i:j] <span style=color:#f92672>==</span> s[i:j][::<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>]:
+</span></span><span style=display:flex><span>                    <span style=color:#66d9ef>for</span> item <span style=color:#f92672>in</span> dp[j]:
+</span></span><span style=display:flex><span>                        dp[i]<span style=color:#f92672>.</span>append([s[i:j]] <span style=color:#f92672>+</span> item)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> dp[<span style=color:#ae81ff>0</span>]
+</span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/169/>169</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/dp/>dp</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/lps/>lps</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/palindromic-substrings/><h2 class=post-title>647. Palindromic Substrings</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on April 9, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/palindromic-substrings/>https://leetcode.com/problems/palindromic-substrings/</a></p><p>Code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Time Complexity: O(n^2)</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Space Complexity: O(n^2)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>countSubstrings</span>(self, str1: str) <span style=color:#f92672>-&gt;</span> int:
+</span></span><span style=display:flex><span>        n <span style=color:#f92672>=</span> len(str1)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        lookup_table <span style=color:#f92672>=</span> [[<span style=color:#66d9ef>False</span> <span style=color:#66d9ef>for</span> _ <span style=color:#f92672>in</span> range(n)] <span style=color:#66d9ef>for</span> _ <span style=color:#f92672>in</span> range(n)]
+</span></span><span style=display:flex><span>        ps_count<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(n <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>, <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>, <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>):
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>for</span> j <span style=color:#f92672>in</span> range(i, n):
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>if</span> str1[i] <span style=color:#f92672>==</span> str1[j]:
+</span></span><span style=display:flex><span>                    <span style=color:#66d9ef>if</span> i<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span> <span style=color:#f92672>&gt;=</span> j:
+</span></span><span style=display:flex><span>                        lookup_table[i][j] <span style=color:#f92672>=</span> <span style=color:#66d9ef>True</span>
+</span></span><span style=display:flex><span>                    <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>                        lookup_table[i][j] <span style=color:#f92672>=</span> lookup_table[i<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>][j<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>]
+</span></span><span style=display:flex><span>                
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>if</span> lookup_table[i][j]:
+</span></span><span style=display:flex><span>                    ps_count <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> ps_count
+</span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/169/>169</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/dp/>dp</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/lps/>lps</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/longest-palindromic-substring/><h2 class=post-title>5. Longest Palindromic Substring</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on April 9, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/longest-palindromic-substring/>https://leetcode.com/problems/longest-palindromic-substring/</a></p><p>Code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Time Complexity: O(n^2)</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Space Complexity: O(n)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>longestPalindrome</span>(self, s: str) <span style=color:#f92672>-&gt;</span> str:
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        res <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>
+</span></span><span style=display:flex><span>        resLen <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(len(s)):
+</span></span><span style=display:flex><span>            <span style=color:#75715e># odd length</span>
+</span></span><span style=display:flex><span>            l, r <span style=color:#f92672>=</span> i, i
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>while</span> l <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>0</span> <span style=color:#f92672>and</span> r <span style=color:#f92672>&lt;</span> len(s) <span style=color:#f92672>and</span> s[l] <span style=color:#f92672>==</span> s[r]:
+</span></span><span style=display:flex><span>                
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>if</span> r <span style=color:#f92672>-</span> l <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span> <span style=color:#f92672>&gt;</span> resLen:
+</span></span><span style=display:flex><span>                    res <span style=color:#f92672>=</span> s[l:r<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>]
+</span></span><span style=display:flex><span>                    resLen <span style=color:#f92672>=</span> r <span style=color:#f92672>-</span> l <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>                l<span style=color:#f92672>-=</span><span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>                r<span style=color:#f92672>+=</span><span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>            <span style=color:#75715e># even length</span>
+</span></span><span style=display:flex><span>            l, r <span style=color:#f92672>=</span> i, i<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>while</span> l <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>0</span> <span style=color:#f92672>and</span> r <span style=color:#f92672>&lt;</span> len(s) <span style=color:#f92672>and</span> s[l] <span style=color:#f92672>==</span> s[r]:
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>if</span> r <span style=color:#f92672>-</span> l <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span> <span style=color:#f92672>&gt;</span> resLen:
+</span></span><span style=display:flex><span>                    res <span style=color:#f92672>=</span> s[l:r<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>]
+</span></span><span style=display:flex><span>                    resLen <span style=color:#f92672>=</span> r <span style=color:#f92672>-</span> l <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>                l<span style=color:#f92672>-=</span><span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>                r<span style=color:#f92672>+=</span><span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> res
+</span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/169/>169</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/dp/>dp</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/lps/>lps</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/matchsticks-to-square/><h2 class=post-title>473. Matchsticks to Square</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 5, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/matchsticks-to-square>https://leetcode.com/problems/matchsticks-to-square</a></p><p>Status: done</p><p>Solution: backtracking</p><p>Code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e>#Time Complexity: O(4^n)</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#Space Complexity: O(n)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>makesquare</span>(self, matchsticks: List[int]) <span style=color:#f92672>-&gt;</span> bool:
+</span></span><span style=display:flex><span>        tot_length <span style=color:#f92672>=</span> sum(matchsticks) 
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> tot_length <span style=color:#f92672>%</span> <span style=color:#ae81ff>4</span> <span style=color:#f92672>!=</span> <span style=color:#ae81ff>0</span>:
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>False</span>
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        length <span style=color:#f92672>=</span> tot_length <span style=color:#f92672>/</span> <span style=color:#ae81ff>4</span>
+</span></span><span style=display:flex><span>        sides <span style=color:#f92672>=</span> [<span style=color:#ae81ff>0</span>]<span style=color:#f92672>*</span><span style=color:#ae81ff>4</span>
+</span></span><span style=display:flex><span>        matchsticks<span style=color:#f92672>.</span>sort(reverse<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>backtracking</span>(i):
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> i <span style=color:#f92672>==</span> len(matchsticks):
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>True</span>
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>for</span> j <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>4</span>):
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>if</span> sides[j] <span style=color:#f92672>+</span> matchsticks[i] <span style=color:#f92672>&lt;=</span> length:
+</span></span><span style=display:flex><span>                    sides[j] <span style=color:#f92672>+=</span> matchsticks[i]
+</span></span><span style=display:flex><span>                    <span style=color:#66d9ef>if</span> backtracking(i<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>):
+</span></span><span style=display:flex><span>                        <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>True</span>
+</span></span><span style=display:flex><span>                    sides[j] <span style=color:#f92672>-=</span> matchsticks[i]
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>False</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> backtracking(<span style=color:#ae81ff>0</span>)
+</span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/169/>169</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/backtracking/>backtracking</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/house-robber-iii/><h2 class=post-title>337. House Robber Iii</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 5, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/house-robber-iii/
+Status: done
+Solution: backtracking
+Code:
+#Time Complexity: O(n) #Space Complexity: O(h), , where h is the height of the tree # Definition for a binary tree node. # class TreeNode: # def __init__(self, val=0, left=None, right=None): # self.val = val # self.left = left # self.right = right class Solution: def dfs(self, root): if root is None: return [0, 0] leftChild = self.dfs(root.left) rightChild = self.dfs(root.right) not_node = max(leftChild) + max(rightChild) node = root.
+<a href=https://zalman0813.github.io/posts/house-robber-iii/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/169/>169</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/backtracking/>backtracking</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/restore-ip-addresses/><h2 class=post-title>93. Restore Ip Addresses</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 5, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/restore-ip-addresses/
+Status: done
+Solution: backtracking
+Code:
+#Time Complexity: O(1) #Space Complexity: O(1) class Solution: def restoreIpAddresses(self, s: str) -> List[str]: if len(s) &lt; 4 or len(s) > 12: return [] result = [] def backtracking(i, dots, curIp): if dots == 4 and i == len(s): result.append(curIp[:-1]) return if dots > 4: return for j in range(i, min(i+3,len(s))): if int(s[i:j+1]) &lt;= 255 and (i == j or s[i] != '0'): backtracking(j+1, dots + 1, curIp + s[i:j+1] + ".
+<a href=https://zalman0813.github.io/posts/restore-ip-addresses/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/169/>169</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/backtracking/>backtracking</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/word-search/><h2 class=post-title>79. Word Search</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 5, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/word-search/
+Status: done
+Solution: backtracking
+Code:
+#Time Complexity: O(n×3^l) #Space Complexity: O(l), , where l is the length of the word to be searched in the grid. class Solution: def word_search(self, grid, word): n = len(grid) if n &lt; 1: return False m = len(grid[0]) if m &lt; 1: return False for row in range(n): for col in range(m): if self.depth_first_search(row, col, grid, word): return True return False def depth_first_search(self,row, col, grid, word): if len(word) == 0: return True if row &lt; 0 or row == len(grid) or col &lt; 0 or col == len(grid[0]) \ or word[0].
+<a href=https://zalman0813.github.io/posts/word-search/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/169/>169</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/backtracking/>backtracking</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/n-queens/><h2 class=post-title>51. N Queens</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 5, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/n-queens/
+Status: done
+Solution: backtracking
+Code:
+#Time Complexity: O(n^2) #Space Complexity: O(n) class Solution: def mapping(self, n, i): pattern = ["."]*n pattern[i] = 'Q' return "".join(pattern) def is_valid_move(self, proposed_row, proposed_col, solution): for i in range(proposed_row): old_row = i old_col = solution[i] diagonal_offset = proposed_row - old_row if (proposed_col == old_col or proposed_col + diagonal_offset == old_col or proposed_col - diagonal_offset == old_col): return False return True def backtracking(self, n, row, solution, results): if row == n: results.
+<a href=https://zalman0813.github.io/posts/n-queens/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/169/>169</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/hard/>hard</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/backtracking/>backtracking</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/pacific-atlantic-water-flow/><h2 class=post-title>417. Pacific Atlantic Water Flow</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on February 5, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/pacific-atlantic-water-flow/
+Solution: dfs
+Code: dfs
+# Time Complexity: O(m*n) # Space Complexity: O(m*n) class Solution: def pacificAtlantic(self, heights: List[List[int]]) -> List[List[int]]: pac = set() atl = set() ROWS = len(heights) COLS = len(heights[0]) def dfs(r, c, visit, prevHeight): if ((r, c) in visit or r &lt; 0 or c &lt; 0 or r >= ROWS or c >= COLS or heights[r][c] &lt; prevHeight ): return visit.add((r,c)) dfs(r + 1, c, visit, heights[r][c]) dfs(r - 1, c, visit, heights[r][c]) dfs(r, c + 1, visit, heights[r][c]) dfs(r, c - 1, visit, heights[r][c]) for c in range(COLS): dfs(0, c, pac, heights[0][c]) dfs(ROWS - 1, c, atl, heights[ROWS - 1][c]) for r in range(ROWS): dfs(r, 0, pac, heights[r][0]) dfs(r, COLS - 1, atl, heights[r][COLS-1]) res = [] for r in range(ROWS): for c in range(COLS): if (r, c) in pac and (r, c) in atl: res.
+<a href=https://zalman0813.github.io/posts/pacific-atlantic-water-flow/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/dfs/>dfs</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/169/>169</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/shortest-path-to-get-food/><h2 class=post-title>1730. Shortest Path to Get Food</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on February 5, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/shortest-path-to-get-food/
+Solution: bfs
+Code: bfs
+# Time Complexity: O(m*n) # Space Complexity: O(m*n) class Solution: def getFood(self, grid): ROWS, COLS = len(grid), len(grid[0]) visit, queue = set(), collections.deque() for r in range(ROWS): for c in range(COLS): if grid[r][c] == '*': queue.append((r,c, 0)) visit.add((r,c)) break directions = [(1,0),(0,-1), (-1,0), (0,1)] while queue: cur_r, cur_c, steps = queue.popleft() if grid[cur_r][cur_c] == '#': return steps else: for dr,dc in directions: new_r, new_c = r + dr, c + dc if (0&lt;=new_r&lt;ROWS) and (0&lt;=new_c&lt;COLS) and grid[new_r][new_c] !
+<a href=https://zalman0813.github.io/posts/shortest-path-to-get-food/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/bfs/>bfs</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/169/>169</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;</div></article></div><ul class="pager main-pager"><li class=next><a href=https://zalman0813.github.io/tags/169/page/2/>Older Posts &rarr;</a></li></ul></div></div></div><footer class=post-footer><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><ul class="list-inline text-center footer-links"></ul><p class="credits copyright text-muted">&nbsp;&bull;&nbsp;&copy;
+2023
+&nbsp;&bull;&nbsp;
+<a href=https://zalman0813.github.io>Pin Code Blog</a></p><p class="credits theme-by text-muted"><a href=https://gohugo.io>Hugo v0.111.3</a> powered &nbsp;&bull;&nbsp; Theme <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> adapted from <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a></p></div></div></div></footer><script src=https://code.jquery.com/jquery-1.12.4.min.js integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin=anonymous></script>
+<script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js integrity=sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa crossorigin=anonymous></script>
+<script src=https://zalman0813.github.io/js/main.js></script><div class=back-to-top id=back-to-top><i class="fas fa-angle-double-up"></i></div></body></html>
