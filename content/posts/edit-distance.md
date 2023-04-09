@@ -11,7 +11,7 @@ Link: https://leetcode.com/problems/edit-distance/description/
 
 Code:
 ```python
-# Time Complexity: O(n^2), , where n is the length of the longest string.
+# Time Complexity: O(n^2), where n is the length of the longest string.
 # Space Complexity: O(n^2)
 class Solution:
     def minDistance(self, str1: str, str2: str) -> int:
