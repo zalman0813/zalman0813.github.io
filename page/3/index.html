@@ -3,7 +3,31 @@
 <span class=icon-bar></span>
 <span class=icon-bar></span>
 <span class=icon-bar></span></button>
-<a class=navbar-brand href=https://zalman0813.github.io>Pin Code Blog</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"></ul></div></div></nav><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=page-heading><h1>Pin Code Blog</h1><hr class=small></div></div></div></div></div></header><div role=main class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=posts-list><article class=post-preview><a href=https://zalman0813.github.io/posts/climbing-stairs/><h2 class=post-title>70. Climbing Stairs</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 12, 2023
+<a class=navbar-brand href=https://zalman0813.github.io>Pin Code Blog</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"></ul></div></div></nav><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=page-heading><h1>Pin Code Blog</h1><hr class=small></div></div></div></div></div></header><div role=main class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=posts-list><article class=post-preview><a href=https://zalman0813.github.io/posts/count-square-submatrices-with-all-ones/><h2 class=post-title>1277. Count Square Submatrices With All Ones</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 19, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/count-square-submatrices-with-all-ones/description/>https://leetcode.com/problems/count-square-submatrices-with-all-ones/description/</a></p><p>Status: done</p><p>Solution: dp-bottom up</p><p>Code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e>#Time Complexity: O(n*m)</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#Space Complexity: O(n*m)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>countSquares</span>(self, nums: List[List[int]]) <span style=color:#f92672>-&gt;</span> int:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        rows <span style=color:#f92672>=</span> len(nums)
+</span></span><span style=display:flex><span>        cols <span style=color:#f92672>=</span> len(nums[<span style=color:#ae81ff>0</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        dp <span style=color:#f92672>=</span> [ [<span style=color:#ae81ff>0</span>]<span style=color:#f92672>*</span>cols <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(rows) ]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(rows):
+</span></span><span style=display:flex><span>            dp[i][<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> nums[i][<span style=color:#ae81ff>0</span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> j <span style=color:#f92672>in</span> range(cols):
+</span></span><span style=display:flex><span>            dp[<span style=color:#ae81ff>0</span>][j] <span style=color:#f92672>=</span> nums[<span style=color:#ae81ff>0</span>][j]
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>1</span>, rows):
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>for</span> j <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>1</span>, cols):
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>if</span> nums[i][j] <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:
+</span></span><span style=display:flex><span>                    <span style=color:#66d9ef>continue</span>
+</span></span><span style=display:flex><span>                dp[i][j] <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span> <span style=color:#f92672>+</span> min(dp[i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][j], dp[i][j<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>], dp[i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][j<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>])
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> sum([sum(row) <span style=color:#66d9ef>for</span> row <span style=color:#f92672>in</span> dp])
+</span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;
+<a href=https://zalman0813.github.io/tags/dp/>dp</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/climbing-stairs/><h2 class=post-title>70. Climbing Stairs</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 12, 2023
 &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/climbing-stairs/>https://leetcode.com/problems/climbing-stairs/</a></p><p>Status: done</p><p>Solution: dp-bottom up</p><p>Code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e>#Time Complexity: O(n)</span>
 </span></span><span style=display:flex><span><span style=color:#75715e>#Space Complexity: O(1)</span>
 </span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
@@ -134,14 +158,6 @@ Code:
 #Time Complexity: O(n×3^l) #Space Complexity: O(l), , where l is the length of the word to be searched in the grid. class Solution: def word_search(self, grid, word): n = len(grid) if n &lt; 1: return False m = len(grid[0]) if m &lt; 1: return False for row in range(n): for col in range(m): if self.depth_first_search(row, col, grid, word): return True return False def depth_first_search(self,row, col, grid, word): if len(word) == 0: return True if row &lt; 0 or row == len(grid) or col &lt; 0 or col == len(grid[0]) \ or word[0].
 <a href=https://zalman0813.github.io/posts/word-search/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/169/>169</a>&nbsp;
 <a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/backtracking/>backtracking</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/n-queens/><h2 class=post-title>51. N Queens</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 5, 2023
-&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/n-queens/
-Status: done
-Solution: backtracking
-Code:
-#Time Complexity: O(n^2) #Space Complexity: O(n) class Solution: def mapping(self, n, i): pattern = ["."]*n pattern[i] = 'Q' return "".join(pattern) def is_valid_move(self, proposed_row, proposed_col, solution): for i in range(proposed_row): old_row = i old_col = solution[i] diagonal_offset = proposed_row - old_row if (proposed_col == old_col or proposed_col + diagonal_offset == old_col or proposed_col - diagonal_offset == old_col): return False return True def backtracking(self, n, row, solution, results): if row == n: results.
-<a href=https://zalman0813.github.io/posts/n-queens/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/169/>169</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/hard/>hard</a>&nbsp;
 <a href=https://zalman0813.github.io/tags/backtracking/>backtracking</a>&nbsp;</div></article></div><ul class="pager main-pager"><li class=previous><a href=https://zalman0813.github.io/page/2/>&larr; Newer Posts</a></li><li class=next><a href=https://zalman0813.github.io/page/4/>Older Posts &rarr;</a></li></ul></div></div></div><div class=page-meta></div><footer class=post-footer><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><ul class="list-inline text-center footer-links"></ul><p class="credits copyright text-muted">&nbsp;&bull;&nbsp;&copy;
 2023
 &nbsp;&bull;&nbsp;
