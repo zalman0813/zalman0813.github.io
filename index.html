@@ -3,9 +3,35 @@
 <span class=icon-bar></span>
 <span class=icon-bar></span>
 <span class=icon-bar></span></button>
-<a class=navbar-brand href=https://zalman0813.github.io>Pin Code Blog</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"></ul></div></div></nav><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=page-heading><h1>Pin Code Blog</h1><hr class=small></div></div></div></div></div></header><div role=main class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=posts-list><article class=post-preview><a href=https://zalman0813.github.io/posts/reorder-routes-to-make-all-paths-lead-to-the-city-zero/><h2 class=post-title>1466. Reorder Routes to Make All Paths Lead to the City Zero</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on April 16, 2023
+<a class=navbar-brand href=https://zalman0813.github.io>Pin Code Blog</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"></ul></div></div></nav><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=page-heading><h1>Pin Code Blog</h1><hr class=small></div></div></div></div></div></header><div role=main class=container><div class=row><div class="col-md-10 col-md-offset-1"><div class=posts-list><article class=post-preview><a href=https://zalman0813.github.io/posts/flatten-binary-tree-to-linked-list/><h2 class=post-title>114. Flatten Binary Tree to Linked List</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on April 16, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero>https://leetcode.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero</a></p><p>Solution: dfs</p><p>Code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Time Complexity: O(n).</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Space Complexity: O(n).</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>TreeNode</span>:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> __init__(self, val<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>, left<span style=color:#f92672>=</span><span style=color:#66d9ef>None</span>, right<span style=color:#f92672>=</span><span style=color:#66d9ef>None</span>):
+</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>val <span style=color:#f92672>=</span> val
+</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>left <span style=color:#f92672>=</span> left
+</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>right <span style=color:#f92672>=</span> right
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
+</span></span><span style=display:flex><span>    head <span style=color:#f92672>=</span> <span style=color:#66d9ef>None</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>flatten</span>(self, root: Optional[TreeNode]) <span style=color:#f92672>-&gt;</span> <span style=color:#66d9ef>None</span>:
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        Do not return anything, modify root in-place instead.
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        &#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>dfs</span>(root):
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> root<span style=color:#f92672>.</span>right:
+</span></span><span style=display:flex><span>                dfs(root<span style=color:#f92672>.</span>right)
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> root<span style=color:#f92672>.</span>left:
+</span></span><span style=display:flex><span>                dfs(root<span style=color:#f92672>.</span>left)
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>            root<span style=color:#f92672>.</span>left, root<span style=color:#f92672>.</span>right, self<span style=color:#f92672>.</span>head <span style=color:#f92672>=</span> <span style=color:#66d9ef>None</span>, self<span style=color:#f92672>.</span>head, root
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> root:
+</span></span><span style=display:flex><span>            dfs(root)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> root
+</span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/dfs/>dfs</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/reorder-routes-to-make-all-paths-lead-to-the-city-zero/><h2 class=post-title>1466. Reorder Routes to Make All Paths Lead to the City Zero</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on April 16, 2023
 &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry>Link: https://leetcode.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero
-Solution: top k elements
+Solution: dfs
 Code:
 # Time Complexity: O(n). # Space Complexity: O(n). class Solution: def minReorder(self, n: int, connections: List[List[int]]) -> int: visited = set() edges = { (a, b) for a, b in connections } neighbor = { city: [] for city in range(n) } changes = 0 for a, b in connections: neighbor[a].append(b) neighbor[b].append(a) def dfs(city): nonlocal visited, edges, neighbor, changes for c in neighbor[city]: if c in visited: continue if (c, city) not in edges: changes += 1 visited.
 <a href=https://zalman0813.github.io/posts/reorder-routes-to-make-all-paths-lead-to-the-city-zero/ class=post-read-more>[Read More]</a></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/dfs/>dfs</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/palindrome-partitioning/><h2 class=post-title>131. Palindrome Partitioning</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on April 9, 2023
@@ -202,26 +228,6 @@ Code:
 </span></span><span style=display:flex><span>                    length <span style=color:#f92672>=</span> max(length, <span style=color:#ae81ff>1</span><span style=color:#f92672>+</span>dp[curr<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>][curr<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>])
 </span></span><span style=display:flex><span>                dp[curr][prev<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>=</span> length
 </span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> dp[<span style=color:#ae81ff>0</span>][<span style=color:#ae81ff>0</span>]
-</span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/dp/>dp</a>&nbsp;
-<a href=https://zalman0813.github.io/tags/longest-common-subsequence/>longest common subsequence</a>&nbsp;</div></article><article class=post-preview><a href=https://zalman0813.github.io/posts/word-break-ii/><h2 class=post-title>140. Word Break Ii</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on April 2, 2023
-&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Link: <a href=https://leetcode.com/problems/word-break-ii/description/>https://leetcode.com/problems/word-break-ii/description/</a></p><p>Status: done</p><p>Solution: bottom-up</p><p>Code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Time Complexity: O(n^2)</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Space Complexity: O(n^2)</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>:
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>wordBreak</span>(self, s: str, word_dict: List[str]) <span style=color:#f92672>-&gt;</span> List[str]:
-</span></span><span style=display:flex><span>        dp_solutions <span style=color:#f92672>=</span> [[]] <span style=color:#f92672>*</span> (len(s)<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>)
-</span></span><span style=display:flex><span>        dp_solutions[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;&#34;</span>]
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>1</span>, len(s)<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>):
-</span></span><span style=display:flex><span>            temp <span style=color:#f92672>=</span> []
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>for</span> j <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>0</span>, i):
-</span></span><span style=display:flex><span>                prefix <span style=color:#f92672>=</span> s[j:i]
-</span></span><span style=display:flex><span>                <span style=color:#66d9ef>if</span> prefix <span style=color:#f92672>in</span> word_dict:
-</span></span><span style=display:flex><span>                    <span style=color:#66d9ef>for</span> substrings <span style=color:#f92672>in</span> dp_solutions[j]:
-</span></span><span style=display:flex><span>                        temp<span style=color:#f92672>.</span>append((substrings <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; &#34;</span> <span style=color:#f92672>+</span> prefix)<span style=color:#f92672>.</span>strip())
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>            dp_solutions[i] <span style=color:#f92672>=</span> temp
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> dp_solutions[len(s)]
 </span></span></code></pre></div></div><div class=blog-tags><a href=https://zalman0813.github.io/tags/medium/>medium</a>&nbsp;
 <a href=https://zalman0813.github.io/tags/dp/>dp</a>&nbsp;
 <a href=https://zalman0813.github.io/tags/longest-common-subsequence/>longest common subsequence</a>&nbsp;</div></article></div><ul class="pager main-pager"><li class=next><a href=https://zalman0813.github.io/page/2/>Older Posts &rarr;</a></li></ul></div></div></div><div class=page-meta></div><footer class=post-footer><div class=container><div class=row><div class="col-md-10 col-md-offset-1"><ul class="list-inline text-center footer-links"></ul><p class="credits copyright text-muted">&nbsp;&bull;&nbsp;&copy;
